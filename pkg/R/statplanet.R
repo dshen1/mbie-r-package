@@ -4,19 +4,21 @@ LongToStatPlanet <- function(long, file){
   # the function will start here.  Input will be long, a data frame
   # with columns with the names category, indicator, time, region and value
   
-  if(sum(!c("category", "indicator", "time", "region", "value") %in% names(long)) > 0  ){
+  if(sum(!c("category", "subcategory", "indicator", "time", "region", "value") %in% names(long)) > 0  ){
     stop("'long' must have columns named
-         'category', 'indicator', 'time', 'region' and 'value'")
+         'category', 'subcategory', 'indicator', 'time', 'region' and 'value'")
   }
   
   regions <- as.character(unique(long$region))
   
   # create a wide version in similar structure to final output
-  wide <- dcast(long, category + indicator + time ~ region, sum, 
+  wide <- dcast(long, category + subcategory + indicator + time ~ region, sum, 
                 value.var="value")
   
   # make indicator a character, not factor, to avoid complications
   wide$indicator <- as.character(wide$indicator)
+  wide$category <- as.character(wide$category)
+  wide$subcategory <- as.character(wide$subcategory)
   
   # create skeleton of output data frame
   statplanet <- cbind(data.frame(CATEGORY="", TIME="", INDICATOR="",  SOURCE="",
@@ -39,42 +41,59 @@ LongToStatPlanet <- function(long, file){
   row_number <- 1
   
   # i will loop through the values of categories
+  # i <- 1 # for debugging
   for(i in 1: length(categories)){
   
     # new set of categories
     statplanet[row_number, "CATEGORY"] <- categories[i]
 
-    # next command seems counter to the statplanet spec but is needed to 
-    # make it work
-    row_number <- row_number + 1
-    
-    # within this category we need to know the unique times and indicators
-    times <- unique(long$time)
-    times <- times[order(-times)]
-    indicators <- as.character(unique(wide$indicator))
     
     
-    # now within this category we loop through all the times
-    for(j in 1: length(times)){
-      statplanet[row_number, "TIME"] <- times[j]
+    # within this category we need to know the unique subcategories
+    subcats <- unique(long$subcategory[long$category==categories[i]])
+    
+    for(k in 1: length(subcats)){
+      # k <- i # for debugging
+      
+      # not clear from the spec exactly where we need empty lines but it appears to be before each subcategory
       row_number <- row_number + 1
+      statplanet[row_number, "CATEGORY"] <- paste0(">", subcats[k])
       
-      # and within this time we grab a rectangle of all the indicators
-      tmp <- with(wide, wide[time==times[j] & category == categories[i], 
-                             c("indicator", regions)])
+      long2 <- long[long$subcategory==subcats[k] & long$category==categories[i], ]
+      wide2 <- wide[wide$subcategory==subcats[k] & wide$category==categories[i], ]
       
-      # and put it into our statplanet rectangle:
-      statplanet[row_number : (row_number + nrow(tmp) - 1), c("INDICATOR", regions)] <- tmp
+      # within this subcategory we need to know the unique times and indicators
+      times <- unique(long2$time)
+      times <- times[order(-times)]
+      indicators <- as.character(unique(wide2$indicator))
       
-      row_number <- row_number + nrow(tmp)
+      
+      # now within this category we loop through all the times
+      for(j in 1: length(times)){
+        statplanet[row_number, "TIME"] <- times[j]
+        row_number <- row_number + 1
+        
+        # and within this time we grab a rectangle of all the indicators
+        tmp <- with(wide2, wide2[time==times[j], c("indicator", regions)])
+        
+        # and put it into our statplanet rectangle:
+        statplanet[row_number : (row_number + nrow(tmp) - 1), c("INDICATOR", regions)] <- tmp
+        
+        row_number <- row_number + nrow(tmp)
+      }
+    
     }
-  
+    
   }
-  # replace all the NAs with blanks
-  statplanet[is.na(statplanet)] <- ""
+    # replace all the NAs with blanks
+    statplanet[is.na(statplanet)] <- ""
+    row.names(statplanet) <- NULL
   
   # write to the file location specified earlier
-  write.csv(statplanet[1:nrow(statplanet), ], file=file, row.names=FALSE)
+  # Note - TODO - a bug here, must be something to do with file encoding.  The data file produced
+  # by the following will crash StatPlanet, but if you just open it in Excel and save as csv, without
+  # changing anything, it works fine.
+  write.csv(statplanet, file=file, row.names=FALSE)
   
-  #TODO - sub categories, sources
+  #TODO - sources, stories, more flexibility in the use of categories, subcategories and subsubcategories
 }

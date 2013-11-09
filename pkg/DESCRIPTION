@@ -1,7 +1,7 @@
 Package: mbie
 Type: Package
 Title: Miscellaneous functions and data used by New Zealand Ministry of Business, Innovation and Employment
-Version: 0.5.2
+Version: 0.6.0
 Date: 2013-10-28
 Author: Peter Ellis
 Maintainer: Peter Ellis <peter.ellis@mbie.govt.nz>
