@@ -1,3 +1,20 @@
+mbie 0.6.0
+---------------------------------------------
+
+NEW FUNCTION
+* LongToStatPlanet() - Takes a long form data frame and converts it to StatPlanet format TODO - fix
+
+IMPROVED FUNCTION
+* TODO improved Country13 to include more countries
+
+REVISED DATA
+* TODO changed the current RTEs data frame into RTEs2012
+TODO * added a new RTEs data object which is the RTEs published on 14 November
+
+MANAGEMENT CHANGE
+* added to a repo on GitHub and TODO made it so others can download the package (although it's huge...)
+
+
 mbie 0.5.1 
 ---------------------------------------------
 
