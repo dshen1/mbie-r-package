@@ -1,4 +1,5 @@
-\name{statplanet}
+\name{LongToStatPlanet}
+\alias{LongToStatPlanet}
 \alias{statplanet}
 \title{
 Convert data from long format to StatPlanet format
