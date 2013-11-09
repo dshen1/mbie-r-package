@@ -1,0 +1,107 @@
+mbie 0.5.1 
+---------------------------------------------
+
+NEW FUNCTION
+* Country13() - converts a character or factor of "detailed" country names into the 13 country groupings used in IVS2.  Note - this function has been somewhat rushed into production and some rarely appearing countries need to be added to it.  For now, it works fine with allthe countries reported in IVS1.  Note this function now includes the argument shorten, defaults to TRUE, indicating whether to abbreviate the long names for China, UK and USA
+
+DELETED FUNCTION
+* deleted rjsdmx() which is rendered unnecessary by improvements to the Bank of Italy's RJSDMX package
+
+REVISED DATA
+* changed COPRDetail in IVStrips, IVSspend and IVSvisits to remove the circumflex from Cote d'Ivoire (it just caused too many problems....)
+
+
+
+
+mbie 0.5.0 
+---------------------------------------------
+
+REVISED FUNCTIONS
+* improved rjsdmx()
+
+HELPFILES
+* Example for autocheck() helpfile
+* fixed alias issues with postscript logo helpfiles so now can be accessed by ?logo_white_ps etc
+* fleshed out and improved helpfiles for stat_sa, stat_rollapplyr, stat_index1 and stat_index12
+
+
+
+
+mbie 0.4.4
+---------------------------------------------
+
+NEW FUNCTIONS
+* autocheck() and creategraph(), functions by Cherbane Sarri used in the monthly data checks for the Regional Tourism Indicators; brought into the mbie package (rather than source()d) for the first time
+
+REVISED FUNCTIONS
+* Added additional functionality to rjsdmx() to improve its ability to help the RJSDMX package connect to internet databases through a proxy
+
+HELPFILES
+* new and revised helpfiles as per the above new and revised functions
+* numerous small improvements eg new example for RTEs with a treemap
+
+
+
+mbie 0.4.3
+-------------------------------------------------------------------
+
+NEW FUNCTIONS
+* rjsdmx() asks for user credentials to get through the proxy, loads the RJSDMX library with the
+correct configuration, and deletes all record of the user credentials.
+
+REVISED FUNCTIONS
+* Removed the "db" argument from AskCreds(), as not necessary, and added a Title= argument
+
+UNDER THE HOOD
+* Moved AskCreds() into its own .R file AskCreds.R
+* Moved stat_sa etc into their own .R file OnTheFly.R
+
+
+
+
+
+mbie 0.4.2
+----------------------------------------------------------------
+
+REVISED DATA
+
+* added "locations" with coordinates in NZMG, NZTM and latitude and longitude of 2531 locations
+* added encapsulated postscript versions of the logo that can be used as part of grImport
+
+REVISED FUNCTIONS
+
+* removed treemap_old() altogether
+* deprecated dotchartG and added warning that it does not work with more than one dimensions (decided it's not worth trying to fix it; ggplot is much better)
+
+IMPROVED HELPFILES
+
+* Improvements and fixes to several helpfiles, including creating a complete set for the various map objects Region, TA, TA_TRED, RTO, etc, fixed various broken references, improved some examples, etc
+
+
+
+mbie 0.4.1
+----------------------------------------------------------------
+
+REVISED DATA
+
+* Updated IVSspend to feature the fix to currency labels (some variables had New Taiwanese dollars and Chinese Yuan reversed)
+
+* replaced IVStrips with the version by Jacob Sankey with the adjustment factor for backcasting
+
+REVISED FUNCTIONS
+
+* changed treemap() to tremap_old() and deprecated it in favour of treemap::treemap() in the treemap package.
+
+IMPROVED HELPFILES
+
+* minor improvements to several helpfiles
+
+MBIE 0.4
+----------------------------------------------------------------
+
+NEW DATA
+
+* Added R objects created by importing the shapefiles for boundaries by Regional Council, Territorial Authority and Area Unit, projected onto latitude and longitude
+
+* Added MBIE logo as data(logo)
+
