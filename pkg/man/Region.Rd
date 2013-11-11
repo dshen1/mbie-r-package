@@ -12,13 +12,13 @@ A spatial polygons data frame file with the boundaries and names of New Zealand'
  Spatial polygons dataframe, in latitude and longitude
  }
 \details{
-This object was created by importing a shapefile with \code{readOGR()}, downloaded from the Statistics New Zealand website.
+This object was created by importing a shapefile, downloaded from the Statistics New Zealand website, with \code{readOGR()} and using \code{spTransform} to project it in latitude and longitude (rather than NZTM coordinates).  The boundaries have not been adjusted in any way.
 }
 \source{
-New Zealand Ministry of Business, Innovation and Employment
+Statistics New Zealand
 }
 \references{
-www.mbie.govt.nz
+\code{\link{http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx}}
 }
 
 \note{
@@ -26,7 +26,7 @@ Mapping seems to work better in an R console (eg in conjunction with Notepad++) 
 }
 
 \seealso{
-\code{\link{TA}}
+\code{\link{TA}}, \code{\link{AU}}
 }
 
 \examples{
