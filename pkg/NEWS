@@ -4,8 +4,10 @@ mbie 0.6.0
 NEW FUNCTION
 * LongToStatPlanet() - Takes a long form data frame and converts it to StatPlanet format TODO - make it more flexible in different sortshierarchies of categories and subcategories and subsubcategories; add ability to add "source" for each indicator and "stories" to pop up at particular times
 
+* OneChina() function for when we need to wrap Hong Kong and Macau into China
+
 IMPROVED FUNCTION
-* Improved Country13 to include more countries so it now covers all the countries in the RTEs lookup file and more and hence makes that lookup file redundant
+* Improved Country13 to include more countries so it now covers all the countries in the RTEs lookup file and more and hence makes that lookup file redundant; and has options to first "shorten" names conveniently, and possibly to wrap Hong Kong and Macau into China
 
 REVISED DATA
 * changed the current RTEs data frame into RTEs2012

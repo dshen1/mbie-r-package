@@ -1,4 +1,12 @@
-Country13 <- function(x, shorten=TRUE){
+OneChina <- function(x){
+  x <- rename.levels(x, 
+                     orig=c("Macau (Special Administrative Region)", "Macao", "Hong Kong", 
+                     "Hong Kong (Special Administrative Region)"),
+                     new=rep("China, People's Republic of", 4))
+}
+
+
+Country13 <- function(x, shorten=TRUE, OneChina_first=FALSE){
   # takes a detailed vector of countries and returns them grouped into 13 categories as used in IVS2
   
   # create all the various groupings used for UK, Rest of Europe, Rest of Asia, etc 
@@ -7,6 +15,10 @@ Country13 <- function(x, shorten=TRUE){
   # x <- IVStrips$COPRDetail
   if(is.character(x)){x <- factor(x)}
   if(!is.factor(x)){stop("x must be a vector of countries, of class character or factor")}
+  
+  if(OneChina_first){
+    x <- OneChina(x)
+  }
   
   x2 <- as.character(x)
   x2[grep("d'Ivoire", x2)] <- "Cote d'Ivoire"
