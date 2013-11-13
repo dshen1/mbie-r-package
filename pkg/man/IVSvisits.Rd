@@ -46,7 +46,7 @@ MoEv.m <- melt(MoEv, id.vars=c("IDNumber", "FinalWeight"))
 head(MoEv.m)
 
 # subset data to include cases where marine activities are reported.
-MoEv.sub <- subset(MoEv.m, value %in% Marine)
+MoEv.sub <- subset(MoEv.m, value \%in\% Marine)
 names(MoEv.sub) <- gsub("value", "Activity", names(MoEv.sub))
 head(MoEv.sub)
 
