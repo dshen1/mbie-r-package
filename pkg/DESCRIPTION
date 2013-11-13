@@ -2,7 +2,7 @@ Package: mbie
 Type: Package
 Title: Miscellaneous functions and data used by New Zealand Ministry of Business, Innovation and Employment
 Version: 0.6.0
-Date: 2013-10-28
+Date: 2013-11-14
 Author: Peter Ellis
 Maintainer: Peter Ellis <peter.ellis@mbie.govt.nz>
 Depends: R (>= 2.15.2), stats, tcltk, ggplot2, grid, reshape2, plyr, scales, proto, zoo

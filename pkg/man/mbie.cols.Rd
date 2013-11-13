@@ -34,7 +34,7 @@ Peter Ellis <peter.ellis@mbie.govt.nz>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{tourism.cols}}
 }
 \examples{
 mbie.cols("Teal")

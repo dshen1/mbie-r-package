@@ -13,8 +13,8 @@ A collection of functions, colour palettes and data commonly used by the New Zea
 \tabular{ll}{
 Package: \tab mbie\cr
 Type: \tab Package\cr
-Version: \tab 0.5.1\cr
-Date: \tab 2013-11-7\cr
+Version: \tab 0.6.0\cr
+Date: \tab 2013-11-14\cr
 License: \tab GPL-3\cr
 }
 This package provides:
@@ -33,17 +33,19 @@ Functions giving convenient access to \emph{palettes of colours} including \code
 
 \emph{Data management or import functions}, the most important of which are \code{rename.levels()} and \code{xlsToR()} (the latter ported completely from another author on the web)
 
-The following \emph{rectangular datasets}, accessible by \code{data(...)} and with help available from ?.
+The following \emph{rectangular datasets}, accessible by \code{data(...)} and with help available from ?.  These are datasets that are either finished collection (RVM, the old IVS methodology files) or only infrequently updated (RTEs, forecasts)
 \enumerate{
-  \item{IVStrips}
+  \item{IVStrips} - International Visitor Survey, "old method" 1997-2013
   \item{IVSspend}
   \item{IVSvisits}
-  \item{RTEs}
-  \item{DTSresp}
+  \item{RTEs} - Regional Tourism Estimates
+  \item{forecasts} - New Zealand tourism forecasts
+  \item{DTSresp} - Domestic Travel Survey
   \item{DTStrips}
   \item{DTSvisits}
-  \item(RVM)
-  \item(locations)
+  \item(RVM) - Regional Visitor Monitor
+  \item(locations) - reference table of locations used in the DTS and the old method IVS
+  \item{TA_lookup} - reference table showing which "RTI TA" (modified Territorial Authority as used in production of the Regional Tourism Indicators) is in which genuine TA as used by Statistics New Zealand.
 }
   
 The following \emph{spatial polygon dataframes}, also accessible by \code{data(...)} and with help available from ?.

@@ -1,17 +1,21 @@
 mbie 0.6.0
 ---------------------------------------------
 
+NEW AND REVISED DATA
+* added forecasts, on the principle of including data to this package that is updated annually
+
+* renamed the old RTEs data frame as RTEs2012
+
+* added a new RTEs data object, which is the RTEs published on 14 November
+
 NEW FUNCTION
-* LongToStatPlanet() - Takes a long form data frame and converts it to StatPlanet format TODO - make it more flexible in different sortshierarchies of categories and subcategories and subsubcategories; add ability to add "source" for each indicator and "stories" to pop up at particular times
+* LongToStatPlanet() - Takes a long form data frame and converts it to StatPlanet format TODO - make it more flexible in different sortshierarchies of categories and subcategories and subsubcategories; add ability to add "source" for each indicator and "stories" to pop up at particular times.  Very experimental at this stage. Down the track we might spin this off into a dedicated rstatplanet package.
 
 * OneChina() function for when we need to wrap Hong Kong and Macau into China
 
 IMPROVED FUNCTION
 * Improved Country13 to include more countries so it now covers all the countries in the RTEs lookup file and more and hence makes that lookup file redundant; and has options to first "shorten" names conveniently, and possibly to wrap Hong Kong and Macau into China
 
-REVISED DATA
-* changed the current RTEs data frame into RTEs2012
-* added a new RTEs data object which is the RTEs published on 14 November
 
 MANAGEMENT CHANGE
 * added to a repo on GitHub

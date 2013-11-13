@@ -14,7 +14,7 @@ Regional Tourism Estimates
  
  }
 \details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+The RTEs are only updated once a year, when the latest Tourism Satellite Account is updated.  The RTEs data frame holds the latest version.  
 }
 \source{
 New Zealand Ministry of Business, Innovation and Employment
@@ -24,7 +24,7 @@ www.mbie.govt.nz
 }
 
 \seealso{
-
+\code{\link{RTEs2012}}
 }
 
 \examples{
@@ -45,9 +45,9 @@ rte_orig$RTO2 <- with(rte_orig, gsub(" RTO", "", as.character(RTO)))
 
 
 # Create the version aggregated by RTO. 
-# The /4 is there so we get an average annual spend over the four years.
+# The /5 is there so we get an average annual spend over the four years.
 tmp <- ddply(rte_orig, .(RTO2, Product, Type), summarise,
-             Spend=sum(Spend)/4)
+             Spend=sum(Spend)/5)
 
 
 # Create a vector to help us sort the RTOs to make the charts more meaningful
@@ -80,7 +80,7 @@ ggplot(tmp, aes(x=RTO2, weight=Spend/1000, fill=Product)) +
   geom_hline(yintercept=0, color="white", size=1) +
   annotate(geom="text", x=3, y=-5/4, label="Domestic", color="grey20", family="Georgia") +
   annotate(geom="text", x=3, y=5/4, label="International", color="grey20", family="Georgia") +
-  labs(y="\nAverage annual spend 2008-2012 ($ billion)", x="",
+  labs(y="\nAverage annual spend 2008-2013 ($ billion)", x="",
        title="Tourism spend by Regional Tourism Organisation\n(sorted by size of total tourism)\n")
 
 #-----------------Example 2 - weighted network graph of regional relations----------------
@@ -132,10 +132,10 @@ require(extrafont)
 
 # Estimate compound annual growth rate
 growth <- ddply(RTEs, .(Territorial_Authority, Region), summarise,
-                growth=CAGR(sum(Spend[YEMar==2012]) / sum(Spend[YEMar==2009]), 3))
+                growth=CAGR(sum(Spend[YEMar==2013]) / sum(Spend[YEMar==2009]), 4))
 
-# Merge with the absolute size of tourism in 2012
-RTE2 <- merge(ddply(subset(RTEs, YEMar==2012), .(Territorial_Authority, Region), summarise,
+# Merge with the absolute size of tourism in 2013
+RTE2 <- merge(ddply(subset(RTEs, YEMar==2013), .(Territorial_Authority, Region), summarise,
                     Spend=sum(Spend)),
               growth)
 
@@ -145,7 +145,7 @@ treemap(RTE2,
         vSize="Spend",
         vColor="growth",
         palette="Spectral",
-        title="Regional Tourism 2012, and CAGR 2009 to 2012",
+        title="Regional Tourism 2013, and CAGR 2009 to 2013",
         font.title="Georgia",
         font.labels="Calibri",
         font.legend="Georgia",
