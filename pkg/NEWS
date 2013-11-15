@@ -8,6 +8,8 @@ NEW AND REVISED DATA
 
 * added a new RTEs data object, which is the RTEs published on 14 November
 
+* add a TA_lookup data object to help convert "TRED TA" (or RTI TA) to the TA (Territorial Authority) as used by Statistics New Zealand
+
 NEW FUNCTION
 * LongToStatPlanet() - Takes a long form data frame and converts it to StatPlanet format TODO - make it more flexible in different sortshierarchies of categories and subcategories and subsubcategories; add ability to add "source" for each indicator and "stories" to pop up at particular times.  Very experimental at this stage. Down the track we might spin this off into a dedicated rstatplanet package.
 
