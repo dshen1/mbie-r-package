@@ -1,3 +1,10 @@
+mbie 0.6.1
+---------------------------------------------
+NEW AND REVISED FUNCTIONS
+Replaced Country13() with CountryGroup() and made it more general; currently it allows a choice of grouping countries up into the 13 groups used for IVS weighting, or the 13 used for TNZ reporting.  Should be backwards compatible.  Also, fixed an error that had Brunei allocated to Africa rather than to Asia.
+
+
+
 mbie 0.6.0
 ---------------------------------------------
 
