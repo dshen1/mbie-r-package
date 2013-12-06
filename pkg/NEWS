@@ -1,9 +1,35 @@
+mbie 0.6.3
+---------------------------------------------
+* Changed treemap examples in the helpfiles to be consistent with the arguments used in treemap 2.1, now available on CRAN.  Things that were previously font.legend, font.title and font.labels now need to be fontfamily.legend, fontfamily.title and fontfamily.labels
+
+* added a fully worked example to the RTO helpfile showing how lattice graphics can create a choropleth map with an added points layer; an alternative to the base graphics approach we used through most of 2012 and 2013
+
+
+* TODO - might need to change the license in the "Description" file
+
+* TODO - add examples in the compare() and confplot() helpfiles
+
+* TODO - simplify the various maps polygons to save space but still look a decent map
+
+* TODO - add examples for DTSvisits and other DTS objects
+
+
+
+mbie 0.6.2
+---------------------------------------------
+* Added creative commons and crown copyright combination to mbie helpfile.
+
+* Added explicit restriction on re-use to the logo helpfiles.
+
+* Minor improvements to several helpfiles.
+
+
 mbie 0.6.1
 ---------------------------------------------
 NEW AND REVISED FUNCTIONS
-Replaced Country13() with CountryGroup() and made it more general; currently it allows a choice of grouping countries up into the 13 groups used for IVS weighting, or the 13 used for TNZ reporting.  Should be backwards compatible.  Also, fixed an error that had Brunei allocated to Africa rather than to Asia.
+* Replaced Country13() with CountryGroup() and made it more general; currently it allows a choice of grouping countries up into the 13 groups used for IVS weighting, or the 13 used for TNZ reporting.  Should be backwards compatible.  Also, fixed an error that had Brunei allocated to Africa rather than to Asia.
 
-
+ 
 
 mbie 0.6.0
 ---------------------------------------------

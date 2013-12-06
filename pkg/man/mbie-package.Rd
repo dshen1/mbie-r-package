@@ -13,8 +13,8 @@ A collection of functions, colour palettes and data commonly used by the New Zea
 \tabular{ll}{
 Package: \tab mbie\cr
 Type: \tab Package\cr
-Version: \tab 0.6.1\cr
-Date: \tab 2013-11-28\cr
+Version: \tab 0.6.3\cr
+Date: \tab 2013-12-07\cr
 License: \tab GPL-3\cr
 }
 This package provides:
@@ -80,6 +80,14 @@ www.mbie.govt.nz
 }
 %%~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R ~~
 %%~~ documentation directory ~~
+
+
+
+\note{
+Crown Copyright. This data and software is protected by copyright. Unless indicated otherwise (either below or within specific items or collections), this copyright material is licensed for re-use under the Creative Commons Attribution 3.0 New Zealand licence. In essence, you are free to copy, distribute and adapt the material, as long as you attribute it to the Ministry of Business, Innovation and Employment and abide by the other licence terms. Please note that this licence does not apply to any logos, emblems and trade marks or to website or email design elements or to any photography. Those specific items may not be re-used without express permission.
+}
+
+
 \keyword{ package }
 \seealso{
 

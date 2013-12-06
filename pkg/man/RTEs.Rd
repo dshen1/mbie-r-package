@@ -1,6 +1,7 @@
 \name{RTEs}
 \alias{RTEs}
 \alias{RTEs}
+\alias{RTEs2012}
 \docType{data}
 \title{
 Regional Tourism Estimates
@@ -14,7 +15,11 @@ Regional Tourism Estimates
  
  }
 \details{
-The RTEs are only updated once a year, when the latest Tourism Satellite Account is updated.  The RTEs data frame holds the latest version.  
+The Regional Tourism Estimates (RTEs) are a world-first combination of the Tourism Satellite Account (a recasting of the National Accounts), the International Visitor Survey, and electronic transactions data.  They are combined using iterative proportional fitting to take into account different propensity to use electronic cards for different products and by tourists from different origin countries.
+
+The RTEs are currently only updated once a year, when Table 7 in the latest Tourism Satellite Account is updated.  The RTEs data frame holds the latest version.
+
+\code{RTEs2012} is the original RTEs released in August 2013.  \code{RTEs} is the latest version of the RTEs.
 }
 \source{
 New Zealand Ministry of Business, Innovation and Employment
@@ -24,7 +29,7 @@ www.mbie.govt.nz
 }
 
 \seealso{
-\code{\link{RTEs2012}}
+\code{\link{RTEs2012}}, \code{\link{RTO}} (for an example using the RTEs for a choropleth map)
 }
 
 \examples{
@@ -146,9 +151,9 @@ treemap(RTE2,
         vColor="growth",
         palette="Spectral",
         title="Regional Tourism 2013, and CAGR 2009 to 2013",
-        font.title="Georgia",
-        font.labels="Calibri",
-        font.legend="Georgia",
+        fontfamily.title="Georgia",
+        fontfamily.labels="Calibri",
+        fontfamily.legend="Georgia",
         type="value",
         inflate.labels=TRUE,
         algorithm="squarified")
@@ -156,3 +161,4 @@ treemap(RTE2,
 
 }
 \keyword{datasets}
+
