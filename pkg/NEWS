@@ -1,3 +1,9 @@
+mbie 0.7.0
+------------------------------------------
+* Removed the various map objects and their helpfiles.  These made the package very large; and it was not well documented
+how they were created in the first place.  Have now created a separate mbiemaps package (with slimmed down versions of the maps) and github repo
+
+
 mbie 0.6.3
 ---------------------------------------------
 * Changed treemap examples in the helpfiles to be consistent with the arguments used in treemap 2.1, now available on CRAN.  Things that were previously font.legend, font.title and font.labels now need to be fontfamily.legend, fontfamily.title and fontfamily.labels

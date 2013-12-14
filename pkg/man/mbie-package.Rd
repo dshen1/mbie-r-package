@@ -13,8 +13,8 @@ A collection of functions, colour palettes and data commonly used by the New Zea
 \tabular{ll}{
 Package: \tab mbie\cr
 Type: \tab Package\cr
-Version: \tab 0.6.3\cr
-Date: \tab 2013-12-07\cr
+Version: \tab 0.7.0\cr
+Date: \tab 2013-12-20\cr
 License: \tab GPL-3\cr
 }
 This package provides:
@@ -48,15 +48,6 @@ The following \emph{rectangular datasets}, accessible by \code{data(...)} and wi
   \item{TA_lookup} - reference table showing which "RTI TA" (modified Territorial Authority as used in production of the Regional Tourism Indicators) is in which genuine TA as used by Statistics New Zealand.
 }
   
-The following \emph{spatial polygon dataframes}, also accessible by \code{data(...)} and with help available from ?.
-\enumerate{
-  \item{RTO} - boundaries of Regional Tourism Organisations (with some minor quibbles in Canterbury)
-  \item{TA_TRED} - boundaries of modified Territorial Authorities (called TA_TRED for historical reasons) - similar to Territorial Authorities as defined by Statistics New Zealand, but with a few subdivisions.  For example, Southland is split into Fiordland and Southland; Auckland is split into six territories.
-  \item{Region} - Regional Council boundaries in 2012, imported from a Statistics New Zealand shape file and projected to latitude and longitude
-  \item{TA} - Territorial Authority boundaries in 2012, imported from a Statistics New Zealand shape file and projected to latitude and longitude
-  \item{AU} - Area Unit boundaries in 2012, imported from a Statistics New Zealand shape file and projected to latitude and longitude
-}
-
 The following raster image, created by importing a portable networks graphics file:
 \enumerate{
   \item{logo}
@@ -91,7 +82,7 @@ Crown Copyright. This data and software is protected by copyright. Unless indica
 \keyword{ package }
 \seealso{
 
-\code{\link[<pkg>:<pkg>-package]{ggplot2}}, \code{\link[<pkg>:<pkg>-package]{wordcloud}}, \code{\link[<pkg>:<pkg>-package]{XML}}, \code{\link[<pkg>:<pkg>-package]{tm}}, \code{\link[<pkg>:<pkg>-package]{grid}}, \code{\link[<pkg>:<pkg>-package]{survey}}, \code{\link[<pkg>:<pkg>-package]{zoo}}
+\code{\link[<pkg>:<pkg>-package]{mbiemaps}}, \code{\link[<pkg>:<pkg>-package]{ggplot2}}, \code{\link[<pkg>:<pkg>-package]{wordcloud}}, \code{\link[<pkg>:<pkg>-package]{XML}}, \code{\link[<pkg>:<pkg>-package]{tm}}, \code{\link[<pkg>:<pkg>-package]{grid}}, \code{\link[<pkg>:<pkg>-package]{survey}}, \code{\link[<pkg>:<pkg>-package]{zoo}}
 }
 \examples{
 
