@@ -1,13 +1,5 @@
-```{r Header, echo=FALSE, results='hide', cache=FALSE, message=FALSE, fig.width=2.25, fig.height=.6, fig.align="center", fig.cap="", dpi=200}
+<img src="figure/Header.png" title="" alt="" style="display: block; margin: auto;" />
 
-library(mbie)
-library(mbiemaps)
-data(logo)
-par(mai=c(0,0,0,0))
-	plot(1:10, 1:10, axes=F, type="n", xlab="", ylab="")
-	grid.raster(logo, .5, .5)
-theme_set(theme_grey())
-```
 "mbie" R package
 ==================
 
@@ -18,7 +10,8 @@ This data and code are available under a Creative Commons license - see http://i
 
 ## Demo of Regional Tourism Estimates data
 
-```{r, RTESeg, warnings=FALSE, message=FALSE, dev="png", fig.align='center', fig.width=9, tidy=FALSE}
+
+```r
 
 data(RTEs)
 
@@ -45,10 +38,14 @@ treemap(RTE2,
         algorithm="squarified")
 ```
 
+<img src="figure/RTESeg.png" title="plot of chunk RTESeg" alt="plot of chunk RTESeg" style="display: block; margin: auto;" />
+
+
 
 ## Demo of International Visitor Survey data
 This includes use of the backcasting "Adjusted Factor" from the redevelopment in 2013, and also illustrates the CountryGroup() and stat_sa() (for seasonal adjustment on the fly) functions.
-```{r IVSeg, fig.width=9, tidy=FALSE, fig.align='center'}
+
+```r
 
 library(plyr)
 library(scales)
@@ -70,10 +67,14 @@ ggplot(tmp, aes(x=period, y=Total / 10^6, color=Country)) +
   ggtitle("Seasonally adjusted NZ tourism spend by country of origin")
 ```
 
+<img src="figure/IVSeg.png" title="plot of chunk IVSeg" alt="plot of chunk IVSeg" style="display: block; margin: auto;" />
+
+
 
 ## Demo of Regional Tourism Estimates in combination with maps in the accompanying mbiemaps package
 
-```{r dev='png', fig.width=9, tidy=FALSE, fig.align='center'}
+
+```r
 
 # load in RTO map
 library(sp)
@@ -120,6 +121,11 @@ spplot(RTO, zcol="Growth", col.regions=cols, main="Domestic tourist spend", col=
 	sp.layout=list("sp.points", coords, pch=1, col="black", lwd=2, cex=sizes)) # add circles layer
 grid.text("Circle size is proportional to\ndomestic tourism spend in 2013", .2,.7)
 grid.text("Average growth per year in domestic tourism 2009 - 2013", .93,.5, , rot=-90)
+```
 
+<img src="figure/unnamed-chunk-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+
+```r
 
 ```
+
