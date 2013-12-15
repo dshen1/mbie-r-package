@@ -9,15 +9,25 @@ par(mai=c(0,0,0,0))
 theme_set(theme_grey())
 ```
 "mbie" R package
+<<<<<<< HEAD
 ==================
+=======
+========================================================
+>>>>>>> 57c383dde4f0bf8746c0dda5155b236154568114
 
 This public repository holds source code and data for the "mbie" R package used by New Zealand's Ministry of Business, Innovation and Employment, primarily but not only the Sector Performance team.  The package is public to allow access to the data under the conditions of the most transparency and to the maximum degree of granularity, as directed by the New Zealand government.  Over 2014 further improvements will be made to make the data more accessible.
 
 This data and code are available under a Creative Commons license - see http://ict.govt.nz/guidance-and-resources/information-and-data/nzgoal/ for details.
 
+<<<<<<< HEAD
 ## Demo of Regional Tourism Estimates data
 
 ```{r, RTESeg, warnings=FALSE,dev="png", fig.align='center', fig.width=9, tidy=FALSE}
+=======
+# Demo of Regional Tourism Estimates data
+
+```{r, RTESeg, warnings=FALSE,dev="png", fig.width=8, tidy=FALSE}
+>>>>>>> 57c383dde4f0bf8746c0dda5155b236154568114
 data(RTEs)
 
 require(treemap)
@@ -44,9 +54,15 @@ treemap(RTE2,
 ```
 
 
+<<<<<<< HEAD
 ## Demo of International Visitor Survey data
 This includes use of the backcasting "Adjusted Factor" from the redevelopment in 2013, and also illustrates the CountryGroup() and stat_sa() (for seasonal adjustment on the fly) functions.
 ```{r IVSeg, fig.width=9, tidy=FALSE, fig.align='center'}
+=======
+# Demo of International Visitor Survey data
+This includes use of the backcasting "Adjusted Factor" from the redevelopment in 2013, and also illustrates the CountryGroup() and stat_sa() (for seasonal adjustment on the fly) functions.
+```{r IVSeg}
+>>>>>>> 57c383dde4f0bf8746c0dda5155b236154568114
 library(plyr)
 library(scales)
 library(ggplot2)
@@ -67,9 +83,15 @@ ggplot(tmp, aes(x=period, y=Total / 10^6, color=Country)) +
   ggtitle("Seasonally adjusted NZ tourism spend by country of origin")
 ```
 
+<<<<<<< HEAD
 ## Demo of Regional Tourism Estimates in combination with maps in the accompanying mbiemaps package
 
 ```{r dev='png', fig.width=9, tidy=FALSE, fig.align='center'}
+=======
+# Demo of Regional Tourism Estimates in combination with maps in the accompanying mbiemaps package
+
+```{r dev='png'}
+>>>>>>> 57c383dde4f0bf8746c0dda5155b236154568114
 
 # load in RTO map
 library(sp)
