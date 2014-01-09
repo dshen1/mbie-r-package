@@ -1,3 +1,8 @@
+mbie 0.7.1
+----------------------------------------
+* added theme_nothing
+
+
 mbie 0.7.0
 ------------------------------------------
 * Removed the various map objects and their helpfiles.  These made the package very large; and it was not well documented
