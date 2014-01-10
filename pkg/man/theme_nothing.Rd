@@ -7,7 +7,7 @@ A blank theme for ggplot2 plots.
 Removes axes, makes rectangles and lines blank, etc - so only elements that are explicitly redefined will be drawn.
 }
 \usage{
-theme_nothing(base_size = 12, base_family = "Helvetica")
+theme_nothing(base_size = 12, base_family = "sans")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

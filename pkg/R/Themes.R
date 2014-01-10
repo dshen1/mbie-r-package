@@ -1,6 +1,6 @@
 # This file contains functions relating to ggplot2 themes for mbie
 
-theme_nothing <- function(base_size = 12, base_family = "Helvetica") {
+theme_nothing <- function(base_size = 12, base_family = "sans") {
   theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(
       rect = element_blank(),
