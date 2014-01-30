@@ -33,18 +33,9 @@ Functions giving convenient access to \emph{palettes of colours} including \code
 
 \emph{Data management or import functions}, the most important of which are \code{rename.levels()} and \code{xlsToR()} (the latter ported completely from another author on the web)
 
-The following \emph{rectangular datasets}, accessible by \code{data(...)} and with help available from ?.  These are datasets that are either finished collection (RVM, the old IVS methodology files) or only infrequently updated (RTEs, forecasts)
+The following reference \emph{rectangular datasets}, accessible by \code{data(...)} and with help available from ?.  
 \enumerate{
-  \item{IVStrips} - International Visitor Survey, "old method" 1997-2013
-  \item{IVSspend}
-  \item{IVSvisits}
-  \item{RTEs} - Regional Tourism Estimates
-  \item{forecasts} - New Zealand tourism forecasts
-  \item{DTSresp} - Domestic Travel Survey
-  \item{DTStrips}
-  \item{DTSvisits}
-  \item(RVM) - Regional Visitor Monitor
-  \item(locations) - reference table of locations used in the DTS and the old method IVS
+   \item(locations) - reference table of locations used in the DTS and the old method IVS
   \item{TA_lookup} - reference table showing which "RTI TA" (modified Territorial Authority as used in production of the Regional Tourism Indicators) is in which genuine TA as used by Statistics New Zealand.
 }
   
@@ -81,7 +72,7 @@ Crown Copyright. This data and software is protected by copyright. Unless indica
 
 \keyword{ package }
 \seealso{
-
+\code{\link[<pkg>:<pkg>-package]{mbiedata}}, 
 \code{\link[<pkg>:<pkg>-package]{mbiemaps}}, \code{\link[<pkg>:<pkg>-package]{ggplot2}}, \code{\link[<pkg>:<pkg>-package]{wordcloud}}, \code{\link[<pkg>:<pkg>-package]{XML}}, \code{\link[<pkg>:<pkg>-package]{tm}}, \code{\link[<pkg>:<pkg>-package]{grid}}, \code{\link[<pkg>:<pkg>-package]{survey}}, \code{\link[<pkg>:<pkg>-package]{zoo}}
 }
 \examples{
