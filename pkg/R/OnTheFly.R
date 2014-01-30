@@ -1,23 +1,3 @@
-#---------------Index and Index12---------------
-
-Index <- function(x, ref=x[1]){
-  # Function that takes a vector or time series (or any object actually) 
-  # and returns it as an index based on 100.  Defaults to using the 
-  # first value of the vector as reference value, but this can be overridden.
-  
-  if(length(ref)>1) stop("Reference value must be a single number")
-  x*100/ref
-  
-}
-
-Index12 <- function(x, ref=mean(x[1:12])){
-  # Function that takes a vector or time series (or any object actually) 
-  # and returns it as an index based on 100.  Defaults to using the 
-  # mean of the first 12 elements of the vector as reference value,  
-  # but this can be overridden.
-  if(length(ref)>1) stop("Reference value must be a single number")
-  x*100/ref
-}
 
 
 #-----------stat_sa, stat_rollapplyr and stat_index12-----------------------------

@@ -8,7 +8,7 @@ Convert a vector into an index
 Function that takes an object and returns it as an index based on 100.
 }
 \usage{
-Index(x, ref = x[1])
+Index(x, ref = x[1], stripNAs=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,6 +18,9 @@ Object (usually a vector or time series) to be converted into an index.
   \item{ref}{
 Reference value at which the index will be set to be 100; defaults to the first element of x.
 }
+\item(stripNAs){
+Logical; should NAs be stripped from the vector being indexed first? 	
+	}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~

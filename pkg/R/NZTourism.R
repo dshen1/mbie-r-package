@@ -482,15 +482,3 @@ Importance <- function(x, target=x[ , ncol(x)], use="pairwise.complete.obs", Sca
 }
 
 
-
-wrap <- function(s, n=10){
-  # function inserts line breaks every 10 (or user-specified number) of characters
-  # taken from http://stackoverflow.com/questions/2351744/insert-line-breaks-in-long-string-word-wrap
-  
-  tmp <- gsub(paste0('(.{1,', n, '})(\\s|$)'), '\\1\n', s)
-  
-  # strip off the last 2 characters so no unwanted /n at the very end
-  nc <- nchar(tmp)
-  tmp <- substring(tmp, 1, nc-1)
-  return(tmp)
-}
