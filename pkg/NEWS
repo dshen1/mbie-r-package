@@ -1,3 +1,9 @@
+mbie 0.8.0
+* removed all the big data sets and put in a separate package
+* tweaked Index and Index12 functions
+* added FormatDollars function
+
+
 mbie 0.7.2
 ----------------------------------------
 * added wrap()
