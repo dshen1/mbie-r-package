@@ -18,7 +18,7 @@ Object (usually a vector or time series) to be converted into an index.
   \item{ref}{
 Reference value at which the index will be set to be 100; defaults to mean of the first 12 elements of x.
 }
-	\item(stripNAs){
+	\item{stripNAs}{
 Logical; should NAs be stripped from the vector being indexed first? 	
 	}
 }
