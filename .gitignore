@@ -9,3 +9,5 @@
 *.accdb
 *.mdb
 *.zip
+*.tar.gz
+*.Rcheck
