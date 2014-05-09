@@ -1,3 +1,11 @@
 .Rproj.user
 .Rhistory
 .RData
+[Tt]humbs.db
+*.DS_Store
+*.png
+*.pdf
+*.sav
+*.accdb
+*.mdb
+*.zip
