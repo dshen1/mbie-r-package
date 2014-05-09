@@ -81,19 +81,19 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   						 orig=c("South Africa", "United Arab Emirates", "Afghanistan", "Oman", "Turkey", "Bahrain", "Kenya", "Reunion",     
   								"Botswana", "Saudi Arabia", "Kuwait", "Israel", "Ghana", "Qatar", "Maldives", 
   								"Zambia", "Iraq", "Zimbabwe", "Nigeria", "Swaziland", "Sudan", "Cameroon", "Lebanon", "Namibia",
-  								"Mauritius", "Congo", "Malawi", "Madagascar", "Libya", "Iran", "Cayman Islands", "Lesotho", "Tunisia",
+  								"Mauritius", "Congo", "Malawi", "Madagascar", "Libya", "Iran", "Lesotho", "Tunisia",
   								"Angoloa", "Somalia", "Tanzania", "Morocco", "Yemen", "Mauritania", "Liberia", "Sierra Leone", "Jordan",
   								"Cape Verde", "Uganda", "Egypt", "Mali", "Cote d'Ivoire", "Gabon", "Eritrea", "Angola", "Mozambique",
-  								"Seychelles", "Trinidad and Tobago", "Ethiopia", "Algeria", "Western Sahara", "Gaza Strip/Palestine/West Bank", "Syria", "Benin", "Burkina Faso", 
+  								"Seychelles", "Ethiopia", "Algeria", "Western Sahara", "Gaza Strip/Palestine/West Bank", "Syria", "Benin", "Burkina Faso", 
   						        "Central African Republic", "Chad", "Congo, the Democratic Republic of the", "Equatorial Guinea", 
   						        "Gambia", "Guinea-Bissau", "Niger", "Sao Tome and Principe", "Senegal", "Togo", "Burundi", 
   						        "Comoros", "Djibouti", "Mayotte", "Syrian Arab Republic", "Tanzania, United Republic of", 
   						        "Palestinian Territories, Occupied", "Cote d'Ivoire", "Middle East", "Rest of Africa",
                       "Guinea", "Rwanda"),
-  						 new=rep("Africa and Middle East", 82))
+  						 new=rep("Africa and Middle East", 80))
     
     x <- rename.levels(x, 
-  						 orig=c("Argentina", "Chile", "Brazil", "Mexico", "Ecuador", "Costa Rica", "Jamaica", "Panama", 
+  						 orig=c("Argentina", "Chile", "Brazil", "Mexico", "Ecuador", "Costa Rica", "Jamaica", "Panama", "Cayman Islands",
   								"Colombia", "Uruguay", "Peru", "Paraguay", "Bermuda", "Barbados", "St Lucia",
   								"Antigua and Barbuda", "Guatemala", "Dominican Republic", "Venezuela", "Puerto Rico", "Bolivia",
   								"Bahamas", "Martinique", "St Vincent and the Grenadines", "Turks and Caicos Islands",
@@ -102,7 +102,7 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                       "Suriname", "El Salvador", "Nicaragua", "Grenada", "Haiti", "Montserrat", "St Kitts and Nevis",
                       "Anguilla", "Saint Vincent and the Grenadines", "Curacao", "Saint Kitts and Nevis",
                       "Bolivia, Plurinational State of", "Brunei Darussalam", "Saint Lucia", "Venezuela, Bolivarian Republic of"),
-  						 new=rep("Rest of Americas", 53))
+  						 new=rep("Rest of Americas", 54))
     
     Countries <- c("Australia", "China, People's Republic of", "Germany", "United States of America", 
                    "Japan", "Korea, Republic of", "Canada", "United Kingdom", "Rest of Europe", "Rest of Asia", "Rest of Oceania", 

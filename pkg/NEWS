@@ -1,3 +1,8 @@
+mbie 0.8.1
+* CountryGroup function corrected: "Cayman Islands" and "Trinidad and Tobago" taken out of "Africa and Middle East" and put into "Rest of Americas"
+
+
+
 mbie 0.8.0
 * removed all the big data sets and put in a separate package
 * tweaked Index and Index12 functions
