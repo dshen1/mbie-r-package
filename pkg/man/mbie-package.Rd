@@ -13,8 +13,8 @@ A collection of functions, colour palettes and data commonly used by the New Zea
 \tabular{ll}{
 Package: \tab mbie\cr
 Type: \tab Package\cr
-Version: \tab 0.8.0\cr
-Date: \tab 2013-1-31\cr
+Version: \tab 0.8.1\cr
+Date: \tab 2014-05-09\cr
 License: \tab GPL-3\cr
 }
 This package provides:
