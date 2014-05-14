@@ -8,6 +8,5 @@ require(devtools)
 
 
 # Build the package:
-setwd("pkg")
-  build(path= "P:/OTSP/data-infrastructure/testing/", binary=TRUE)
-setwd("..")
+build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/testing/", binary=TRUE)
+
