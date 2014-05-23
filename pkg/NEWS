@@ -1,3 +1,9 @@
+mbie 0.8.3 
+*	Developed by Antonia Milkop
+* 	IVS2 now has up-to-date locations file called locations_2014.  
+*	all old locations (pre July 2013 IVS) are now stored in locations_old
+
+
 mbie 0.8.2 (Approved PE 14/5/14)
 * Removed extrafont dependencies
 
