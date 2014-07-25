@@ -13,7 +13,9 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   
   # for debugging
   # x <- IVStrips$COPRDetail
-  # type <- "13"
+  # type <- "TNZ2013"
+  # OneChina_first <- FALSE
+  # shorten <- TRUE
   if (!type %in% c("IVSweights", "TNZ2013", "IVSweights_old")) {
     stop("type must be 'IVSweights' or 'TNZ2013' or 'IVSweights_old'")
   }
@@ -180,15 +182,8 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
    Countries <- c("Australia", "China, People's Republic of", "Germany", "United States of America", "Hong Kong (Special Administrative Region)", 
                "Japan", "Singapore", "Taiwan", "Korea, Republic of", "Canada", "United Kingdom", "Other Europe", "Other Asia", "Other Countries")
     }
-    x <- (as.factor(ifelse(x %in% Countries, as.character(x), 
-        "Other")))
-        
-    if (shorten) {
-    x <- rename.levels(x, 
-                     orig = c("China, People's Republic of", "United States of America", "United Kingdom", "Hong Kong (Special Administrative Region)"), 
-                     new = c("China", "USA", "UK", "Hong Kong"))
-    }
-    return(x)
+   
+    
 
     
     ##============ TNZ2013 =============
@@ -220,6 +215,9 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   return(x)
   
 }
+
+
+
     ##============ Country13 ============= 
 Country13 <- function(...){
   warning("Country13 is deprecated and will eventually be withdrawn.  Use CountryGroup instead.")
