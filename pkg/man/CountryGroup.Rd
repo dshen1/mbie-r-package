@@ -17,13 +17,13 @@ CountryGroup(x, shorten=TRUE, type="IVSweights", OneChina_first=FALSE)
 Vector with class character or factor, with levels or values indicating countries
 }
  \item{shorten}{
-Logical - should the long names for China, USA and UK be abbreviated?
+Logical - the long names for China, USA, Hong Kong and UK can be abbreviated
 }
  \item{type}{
-Character - must be either "IVSweights" or "TNZ2013" - should the grouping be into the thirteen country groupings used for IVSweights, or the groupings used by Tourism New Zealand for their reporting in 2013?
+Character - must be either "IVSweights" or "TNZ2013".  If wanting to replicate old IVS country gropuings, use "IVSweights_old"
 }
  \item{OneChina_first}{
-Logical - Should Macau and Hong Kong, and their variant names, be merged into 'China, People's Republic of' or (the default) be grouped under 'Rest of Asia'?
+Logical - Macau and Hong Kong, and their variant names, can be merged into 'China, People's Republic of' or (the default) be grouped under 'Rest of Asia'
 } 
 
 }

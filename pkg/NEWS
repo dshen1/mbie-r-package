@@ -1,3 +1,15 @@
+mbie 0.8.4 (peer reviewed by Jacob S)
+*	Developed by Antonia Milkop
+* 	CountryManip function has been changed.  Corrections made to the following Country classifications in IVSweights:
+*	Brunei Darussalam (used to be defined as Rest of Americas, now defined as Rest of Asia);
+*	Afghanistan (used to be defined as Africa and Middle East, now defined as Rest of Asia);
+*	Maldives (used to be defined as Africa and Middle East, now defined as Rest of Asia);
+*	Armenia (used to be defined as Rest of Europe, now defined as Rest of Asia);
+*	St Helena (used to be defined as Rest of Americas, now defined as Africa and Middle East);
+*	Falkland Islands (used to be defined as UK, now defined as Rest of Americas)
+*  We have also kept a full list of country mappings called 'IVSweights_old' in the CountryManip function.  
+*  This will allow us to easily replicate country analysis on old IVS data if need be.
+
 mbie 0.8.3 
 *	Developed by Antonia Milkop
 * 	IVS2 now has up-to-date locations file called locations_2013  
