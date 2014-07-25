@@ -128,6 +128,11 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                   orig = c("Not Stated"), 
                   new = rep("Other Countries", 1))
                   
+
+   x <- rename.levels(x, 
+                  orig = c("Falkland Islands"), 
+                  new = rep("United Kingdom", 1))
+                  
    x <- rename.levels(x, 
                   orig = c("Netherlands", "France", "Switzerland", "Sweden", "Italy", "Denmark", "Belgium", 
                            "Spain", "Austria", "Ireland",  "Portugal", "Andorra", "Greece", "Cyprus",  
