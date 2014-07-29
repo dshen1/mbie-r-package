@@ -1,3 +1,7 @@
+mbie 0.8.4 (peer reviwed by PE 30/7/14)
+*  Modified by Antonia Milkop
+*  Took out Country13 from CountryManip function
+
 mbie 0.8.4 (peer reviewed by Jacob S)
 *	Developed by Antonia Milkop
 * 	CountryManip function has been changed.  Corrections made to the following Country classifications in IVSweights:
