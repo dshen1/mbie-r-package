@@ -204,6 +204,10 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                      "Japan", "Korea, Republic of", "Canada", "United Kingdom", "Indonesia","India",
                       "Latin America", "Pen. South East Asia", "France")
    }
+   
+   
+   
+   ##==================final processing==========================
   x <- (as.factor(ifelse(x %in% Countries, as.character(x), "Other")))
 
   if(shorten){
@@ -218,11 +222,7 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
 
 
 
-    ##============ Country13 ============= 
-Country13 <- function(...){
-  warning("Country13 is deprecated and will eventually be withdrawn.  Use CountryGroup instead.")
-  return(CountryGroup(...))
-}
+
 
 ##============ end of CountryGroup function =============
 ##==========================================================
