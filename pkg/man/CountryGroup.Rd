@@ -46,7 +46,6 @@ The country groupings provided by "TNZ2013" are not exactly as might be expected
 \item "Latin America" consists only of the four countries Argentina, Brazil, Chile, Mexico (it excludes Columbia, Peru, and many others)
 }
 
-\code{Country13()} is an old version of this function and its use is deprecated.  \code{CountryGroup()} may eventually be expanded to give convenience groupings with a different number of levels from 13 and the name has been changed to reflect this.  For now (as at version 0.6.1 of the mbie package) Country13() will still work but it is deprecated
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -62,6 +61,7 @@ table(CountryGroup(IVStrips$COPRDetail))
 table(CountryGroup(IVStrips$COPRDetail, shorten=FALSE))
 table(CountryGroup(IVStrips$COPRDetail, OneChina=TRUE))
 table(CountryGroup(IVStrips$COPRDetail, type="TNZ2013", shorten=TRUE))
+table(CountryGroup(IVStrips$COPRDetail, type="IVSweights_old", shorten=TRUE))
 }
 
 
