@@ -3,6 +3,7 @@ mbie 0.8.5
 *  Took out Country13 from CountryManip function
 *  Added IVSweights_old to example(CountryGroup)
 *  Updated the example in locations_2013.Rd with one that relates to the new IVS locations
+* modified CountryGroup further so it can handle some more annoying And/and Of/of and uppercase countries issues (PE)
 
 mbie 0.8.4 (peer reviewed by Jacob S)
 *	Developed by Antonia Milkop

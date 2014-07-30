@@ -20,12 +20,25 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
     stop("type must be 'IVSweights' or 'TNZ2013' or 'IVSweights_old'")
   }
   
+  ##=========General cleanup================
+  
   if(is.character(x)){x <- factor(x)}
   if(!is.factor(x)){stop("x must be a vector of countries, of class character or factor")}
   
   if(OneChina_first){
     x <- OneChina(x)
   }
+  
+  x <- rename.levels(x,
+                     orig=c("AUSTRALIA", "CANADA", "GREECE", "ITALY"),
+                     new = c("Australia", "Canada", "Greece", "Italy"))
+  
+  x <- rename.levels(x,
+                     orig = c("Bosnia And Herzegovina", "Isle Of Man", "Trinidad And Tobago", 
+                              "Turks And Caicos Islands", "United States Of America", "Wallis And Futuna"),
+                     new = c("Bosnia and Herzegovina", "Isle of Man", "Trinidad and Tobago", 
+                             "Turks and Caicos Islands", "United States of America", "Wallis and Futuna"))
+  
   
   x2 <- as.character(x)
   x2[grep("d'Ivoire", x2)] <- "Cote d'Ivoire"
@@ -47,6 +60,9 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   x <- rename.levels(x, 
                      orig=c("United States", "Virgin Islands, U.S.", "Virgin Islands, United States"),
                      new=rep("United States of America", 3))
+  
+  
+  
   
   ##============ IVSweights =============
   
