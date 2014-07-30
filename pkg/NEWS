@@ -1,7 +1,8 @@
-mbie 0.8.4 (peer reviwed by PE 30/7/14)
+mbie 0.8.4 
 *  Modified by Antonia Milkop
 *  Took out Country13 from CountryManip function
 *  Added IVSweights_old to example(CountryGroup)
+*  Updated the example in locations_2013.Rd with one that relates to the new IVS locations
 
 mbie 0.8.4 (peer reviewed by Jacob S)
 *	Developed by Antonia Milkop

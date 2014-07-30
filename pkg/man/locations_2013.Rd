@@ -27,35 +27,28 @@ www.mbie.govt.nz
 }
 
 \examples{
-
-THIS IS AN OLD EXAMPLE BASED ON OLD IVS.  NEEDS UPDATING THIS WITH A RELEVANT EXAMPLE FOR NEW IVS LOCATIONS (E.G. NZ MAP SHOWING INTENSITY OF VISITS IN THE VARIOUS RTOS)
 require(ggplot2)
-data(locations_2013)
 data(IVSvisits)
+data(locations_2013)
+library(mbiemaps)
+data(region_simpl_gg)
 
-# Create a subsample of just 10000 "visits" (legs) from IVSvisits
-set.seed(123)
-visits2 <- IVSvisits[sample(1:nrow(IVSvisits), 10000), c(4:44,196:199,204:205)]
+# merge 2012 data from IVS visits with location information
+visits <-  merge(IVSvisits[IVSvisits$InterviewYear==2012, c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],
+                  locations_2013, 
+                  by.x="VisitOriginPlace", by.y="IVS1_Label")
 
-# Merge with locations at beginning and end of each visit
-visits3 <- merge(visits2, locations_2013[ , c("Location","Longitude","Latitude")], by.x="VisitDestinationPlace", by.y="Location")
-visits4 <- merge(visits3, locations_2013[ , c("Location","Longitude","Latitude")], by.x="VisitOriginPlace", by.y="Location",
-                 suffixes = c("_Destination", "_Origin"))
+# summarise visits by region and remove duplicates
+visits2 <- ddply(visits[!duplicated(visits[c("IDNumber", "Region")]),], .(Region), summarise, Visitors = sum(FinalWeight), Sample = length(FinalWeight))
+
+# merge onto map data
+visits3 <- merge(visits2, region_simpl_gg ,by.x="Region", by.y="NAME", all.y=TRUE)
 
 # Draw plot
-ggplot() +
-  theme_bw() +
-  coord_map() +
-  borders("nz") +
-  geom_segment(data=visits4, 
-               aes(x=Longitude_Origin,
-                   y=Latitude_Origin,
-                   xend=Longitude_Destination,
-                   yend=Latitude_Destination,
-                   size=FinalWeight),
-               alpha=0.05) +
-  facet_wrap(~POVTop3)
-
-
+ggplot(visits3, aes(x = long, y = lat, group = group, fill = Visitors)) +
+  geom_polygon(colour = "grey60") +
+  theme_nothing() + scale_fill_continuous(label=comma, low = "white", high = "blue") +
+  labs(title="Visitors by Region in 2012")
+  
 }
 \keyword{datasets}
