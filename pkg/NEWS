@@ -1,3 +1,7 @@
+mbie 0.8.6
+*  Modified by Antonia Milkop 13/8/14
+*  Updated OneChina example to take out Country13 references as these are no longer applicable 
+
 mbie 0.8.5
 *  Modified by Antonia Milkop
 *  Took out Country13 from CountryManip function

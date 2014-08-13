@@ -18,7 +18,7 @@ Vector with class character or factor, with levels or values indicating countrie
 
 }
 \details{
-This convenience function is most likely to be invisible to the user but called as part of \code{Country13()}, which has the option of including Hong Kong and Macau in China.
+This convenience function is most likely to be invisible to the user but called as part of \code{CountryGroup()}, which has the option of including Hong Kong and Macau in China.
 
 In the tourism industry it is customary to regard Hong Kong and Macau separately from China and for most purposes we group them in "Rest of Asia".  However, for reporting oriented to international relations it can obviously be important to report on the full amount.
 }
@@ -38,12 +38,10 @@ Peter Ellis <peter.ellis@mbie.govt.nz>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{Country13}}
+\code{\link{CountryGroup}}
 }
 \examples{
 data(IVStrips)
-with(IVStrips, table(Country13(OneChina(COPRDetail)), Country13(COPRDetail)))
-
 
 # Compare mainland China spend in 2012/13....
 with(subset(IVStrips, YEJun==2013 & COPRTop5=="China, People's Republic of"),
