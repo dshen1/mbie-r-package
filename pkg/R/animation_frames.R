@@ -1,5 +1,4 @@
 
-
 animation_frames <- function(plot, 
                              dev      = "CairoPDF", 
                              start    = 1, 
@@ -11,28 +10,6 @@ animation_frames <- function(plot,
   # plot <- ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point() + geom_smooth() + ylim(0, 100) + xlim(0, 500)
   # plot <- ggplot(AirPassengers_df, aes(x=Period, y=AirPassengers)) + geom_line() + xlim(1948, 1962) + ylim(0, 700) # alternative
   # start <- 2; dev <- "png"; folder <- "animations"; filename <- "image"
-  
-  # Author: Peter Ellis, 10/9/2014
-  # Function that takes an existing ggplot object and redraws it as many images
-  # for use in an animation.  Each image adds one more point, moving down
-  # the data in their original order.  So the order of the data frame that
-  # was used to create the original plot is important.
-  #
-  # For meaningful results, the original plot needs to explicitly set the y and 
-  # x limits, so each frame has the same scale.
-  #
-  # Variables:
-  # plot: a plot created by ggplot()
-  # dev: either CairoPDF or png
-  # start: the number of points to start with in the first frame
-  # folder: folder in which to save all the images.  folder will be created if it does not exist.
-  # filename: the kernel of the filename for each image.
-  # method:  does each frame represent adding a row of data ("by row") or an increment of one value on the x axis ("by x").  "By x" will work best
-  #          with time series more complex than a single line (eg if you have colour or facet mapped to a variable).  "By row" will work best for a
-  #          scatter plot.
-  # ...: other arguments to be passed to CairoPDF or png, eg width and height
-  
-  
   
   dir.create(folder, showWarnings = FALSE)
   

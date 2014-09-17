@@ -1,3 +1,7 @@
+mbie 0.8.7
+*  Modified by Peter Ellis and Antonia Milkop 17/9/14
+*  Added function animation_frames() to the {mbie} package, as well as associated helpfile
+
 mbie 0.8.6
 *  Modified by Antonia Milkop 13/8/14
 *  Updated OneChina example to take out Country13 references as these are no longer applicable 
