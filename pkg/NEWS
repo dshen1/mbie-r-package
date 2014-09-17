@@ -1,3 +1,7 @@
+mbie 0.8.8
+*  Modified by  Antonia Milkop 17/9/14
+*  Added mbie_footer to mbie package
+
 mbie 0.8.7
 *  Modified by Peter Ellis and Antonia Milkop 17/9/14
 *  Added function animation_frames() to the {mbie} package, as well as associated helpfile
