@@ -1,8 +1,8 @@
 
 # Example 1 - scatterplot with a linear regression line through it
 plot1 <- ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point() + geom_smooth(method="lm") + ylim(0, 100) + xlim(0, 500) 
-animation_frames(plot1, start = 2, dev="png", method = "by row")
 
+   animation_frames(plot1, start = 2, dev="png", method = "by row")
 
 # Example 2 - simple time series line plot
 data(AirPassengers)
@@ -22,4 +22,4 @@ plot3 <- ggplot(tmp, aes(x=YEJun, y = Spend / 10 ^ 6, colour=COPRTop5)) +
 	scale_y_continuous("Total tourist spend ($m)\n", label=comma, limits=c(0, 1.7 * 10 ^ 3)) +
 	scale_x_continuous("", limits=c(1997, 2014)) +
 	theme_bw(base_family="Calibri")
-animation_frames(plot3, filename="IVS", width=9, height=7)
+   animation_frames(plot3, filename="IVS", width=9, height=7)

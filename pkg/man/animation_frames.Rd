@@ -38,6 +38,10 @@ NULL
 }
 
 \examples{
+# We have included the dontrun{} command in all the animation_frames() examples to save people having to click 'enter' multiple times if they automatically run the example(animation_frames). \
+# If you want to run the examples, please copy them from here and run separately in your own R script
+
+\dontrun{
 
 # Example 1 - scatterplot with a linear regression line through it
 plot1 <- ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point() + geom_smooth(method="lm") + ylim(0, 100) + xlim(0, 500) 
@@ -65,9 +69,9 @@ plot3 <- ggplot(tmp, aes(x=YEJun, y = Spend / 10 ^ 6, colour=COPRTop5)) +
 animation_frames(plot3, filename="IVS", width=9, height=7)
 }
 \keyword{animation_frames}
-
+}
 
 \author{
 Peter Ellis <peter.ellis@mbie.govt.nz> 
-10 Septmeber 2014
+10 September 2014
 }
