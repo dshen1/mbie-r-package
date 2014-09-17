@@ -3,6 +3,7 @@
 .RData
 [Tt]humbs.db
 *.DS_Store
+!raw_data/*
 *.png
 *.pdf
 *.sav
