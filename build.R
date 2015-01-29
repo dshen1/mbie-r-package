@@ -9,4 +9,4 @@ require(devtools)
 
 # Build the package:
 build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive/", binary=TRUE)
-
+build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive/", binary=FALSE)

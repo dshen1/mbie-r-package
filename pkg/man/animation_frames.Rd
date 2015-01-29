@@ -68,8 +68,9 @@ plot3 <- ggplot(tmp, aes(x=YEJun, y = Spend / 10 ^ 6, colour=COPRTop5)) +
 	theme_bw(base_family="Calibri")
 animation_frames(plot3, filename="IVS", width=9, height=7)
 }
-\keyword{animation_frames}
 }
+\keyword{animation_frames}
+
 
 \author{
 Peter Ellis <peter.ellis@mbie.govt.nz> 
