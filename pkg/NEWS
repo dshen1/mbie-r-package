@@ -1,3 +1,9 @@
+mbie 0.8.9
+*  Modified by  Antonia Milkop 30/1/2015
+*  Created function MemoryObjUse(), and associated helpfiles
+*  Created function YearEnd(), and associated helpfiles
+
+
 mbie 0.8.8
 *  Modified by  Antonia Milkop 17/9/14
 *  Added mbie_footer to mbie package
