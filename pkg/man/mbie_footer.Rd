@@ -43,6 +43,6 @@ grid.raster(mbie_footer, 0.5, 0.03, width=1)
 
 \keyword{datasets}
 
-\author{
+?mbie\author{
 Antonia Milkop, September 2014
 }
