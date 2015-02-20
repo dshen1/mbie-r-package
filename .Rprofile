@@ -15,8 +15,8 @@
 
  library(utils)
  library(Defaults)
- library(mbie)
- library(mbiedata)
+#  library(mbie)
+#  library(mbiedata)
  
  setDefaults(q, save="no")
  useDefaults(q)

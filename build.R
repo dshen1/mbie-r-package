@@ -14,4 +14,4 @@ build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive/", binary=FALSE)
 ## load pacakge
 rm(list=ls())
 if("package:mbie" %in% search()) detach("package:mbie")
-library(mbie)
+library(mbie,lib.loc="P:/r/libraries/AAA TEST LIBRARIES")

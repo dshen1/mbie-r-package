@@ -1,5 +1,5 @@
 \name{YearEnd}
-\alias{TimePeriod}
+\alias{YearEnd}
 
 \title{
   Convert Time Period to Year End - function
@@ -33,16 +33,14 @@
 %% ~Make other sections like Warning with \section{Warning }{....} ~
   
   \seealso{
-    \code{\link{Memory}}
   }
 \examples{
-require(lubridate)
 # Example 1 - convert the date 31 March 2014 to a year ending March
 YearEnd("2014-03-31",3)
-# Example 1 - convert the date 31 April 2014 to a year ending March
-YearEnd("2014-04-31",3)
+# Example 1 - convert the date 1 April 2014 to a year ending March
+YearEnd("2014-04-01",3)
 # Example 1 - convert the date 31 April 2014 to a year ending June
-YearEnd("2014-04-31", 6)
+YearEnd("2014-04-30",6)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
