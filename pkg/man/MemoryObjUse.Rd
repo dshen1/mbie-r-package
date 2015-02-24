@@ -1,4 +1,5 @@
 \name{MemoryObjUse}
+\alias{MemoryObjUse}
 \alias{MemoryUse}
 \alias{MemoryObjectUse}
 \alias{ObjectMemoryUse}
