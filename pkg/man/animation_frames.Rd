@@ -1,7 +1,5 @@
 \name{animation_frames}
-\alias{animation}
 \alias{animation_frames}
-\alias{animation frames}
 \docType{data}
 \title{
 animation_frames
