@@ -45,24 +45,31 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   x <- factor(x2)
   
   x <- rename.levels(x, 
-						 orig=c("Norfolk Island", "Unknown"),
-						 new=rep("Australia", 2))
+						 orig=c("Norfolk Island", "Unknown", "Cocos (Keeling) Islands", "Christmas Island"),
+						 new=rep("Australia", 4))
   
   x <- rename.levels(x, 
 						 orig=c("UK", "England", "Scotland", "Wales", "Northern Ireland", "United Kingdom (not further defined)", 
-                           "Channel Islands", "Isle of Man"),
-						 new=rep("United Kingdom",8))
+                           "Channel Islands", "Isle of Man", "Pitcairn", "British Indian Ocean Territory"),
+						 new=rep("United Kingdom",10))
 
+  x <- rename.levels(x,
+                     orig="St Maarten (Dutch Part)",
+                     new="Netherlands")
+  
   x <- rename.levels(x, 
                      orig="China",
                      new="China, People's Republic of")
   
   x <- rename.levels(x, 
-                     orig=c("United States", "Virgin Islands, U.S.", "Virgin Islands, United States"),
-                     new=rep("United States of America", 3))
+                     orig=c("United States", "Virgin Islands, U.S.", "Virgin Islands, United States", "United States Minor Outlying Islands"),
+                     new=rep("United States of America", 4))
   
   
   
+  x <- rename.levels(x,
+                     orig = "Burma (Myanmar)",
+                     new = "Myanmar")
   
   ##============ IVSweights =============
   
@@ -75,15 +82,16 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
     x <- rename.levels(x, 
   						 orig=c("Netherlands", "France", "Switzerland", "Sweden", "Italy", "Denmark", "Belgium", "Spain", 
   								"Austria", "Ireland", "Hungary", "Portugal", "Russia", "Andorra", "Greece", "Cyprus", "Lithuania", "Norway", 
-  								"Romania", "Luxembourg", "Finland", "Czech Republic", "Poland", "Iceland", 
+  								"Romania", "Luxembourg", "Finland", "Czech Republic", "Poland", "Iceland", "Czechoslovakia",
   								"Montenegro", "Croatia", "Slovenia", "Ukraine", "Gibraltar", "Latvia",
   								"Estonia", "Greenland", "Liechtenstein", "Serbia", "Bulgaria", "Latvia", "Monaco", "Serbia and Montenegro",
   								"Moldova", "Malta", "Bosnia and Herzegovina", "Slovakia", "Belarus", 
   						        "Faeroe Islands", "Vatican City State", "San Marino", "Albania",
   						        "Former Yugoslav Republic of Macedonia (F", "Moldova, Republic of", "Russian Federation", 
   						        "Holy See (Vatican City State)", "Macedonia, the former Yugoslav Republic of", 
-  						        "United Nations Interim Administration in Kosovo"),
-  						 new=rep("Rest of Europe", 53))
+  						        "United Nations Interim Administration in Kosovo", "Germany, Democratic Republic of", "Kosovo",
+                          "Union of Soviet Socialist Republics", "Yugoslavia/Serbia and Montenegro", "Former Yugoslav Republic of Macedonia (FYROM)"),
+  						 new=rep("Rest of Europe", 59))
       
     x <- rename.levels(x, 
   						 orig=c("Singapore", "Malaysia", "Thailand", "India", "Hong Kong (Special Administrative Region)", 
@@ -99,8 +107,9 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   						 orig=c("NZ", "New Caledonia", "Tonga", "Fiji", "Cook Islands", "Samoa", "Niue", 
   								"French Polynesia", "Vanuatu", "Papua New Guinea", "Solomon Islands", "Guam", 
   								"Tokelau", "Samoa, American", "Antarctica", "Kiribati", "Palau", "Tuvalu", "Micronesia, Federated States of",
-  								"Marshall Islands", "Rest of Oceania", "Northern Mariana Islands", "Nauru", "Wallis and Futuna", "Not Stated"),
-  						 new=rep("Rest of Oceania", 25))
+  								"Marshall Islands", "Rest of Oceania", "Northern Mariana Islands", "Nauru", "Wallis and Futuna", "Not Stated", 
+                          "French Southern Territories", "South Georgia and the South Sandwich Islands"),
+  						 new=rep("Rest of Oceania", 27))
     
     x <- rename.levels(x, 
   						 orig=c("South Africa", "United Arab Emirates", "Oman", "Turkey", "Bahrain", "Kenya", "Reunion",     
@@ -114,8 +123,8 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
   						        "Gambia", "Guinea-Bissau", "Niger", "Sao Tome and Principe", "Senegal", "Togo", "Burundi", 
   						        "Comoros", "Djibouti", "Mayotte", "Syrian Arab Republic", "Tanzania, United Republic of", 
   						        "Palestinian Territories, Occupied", "Cote d'Ivoire", "Middle East", "Rest of Africa",
-                      "Guinea", "Rwanda", "St Helena"),
-  						 new=rep("Africa and Middle East", 79))
+                      "Guinea", "Rwanda", "St Helena", "Cabo Verde", "South Sudan", "Yemen, Democratic"),
+  						 new=rep("Africa and Middle East", 82))
     
     x <- rename.levels(x, 
   						 orig=c("Argentina", "Chile", "Brazil", "Mexico", "Ecuador", "Costa Rica", "Jamaica", "Panama", "Cayman Islands",
@@ -152,14 +161,16 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                   new = rep("United Kingdom", 1))
                   
    x <- rename.levels(x, 
-                  orig = c("Netherlands", "France", "Switzerland", "Sweden", "Italy", "Denmark", "Belgium", 
+                  orig = c("Netherlands", "France", "Switzerland", "Sweden", "Italy", "Denmark", "Belgium", "Czechoslovakia",
                            "Spain", "Austria", "Ireland",  "Portugal", "Andorra", "Greece", "Cyprus",  
                            "Norway", "Romania", "Luxembourg", "Finland", "Czech Republic", "Iceland", "Montenegro", "Croatia", "Slovenia", 
                            "Gibraltar","Greenland", "Liechtenstein", "Serbia", "Bulgaria", "Monaco", "Serbia and Montenegro", "Moldova", 
                            "Malta", "Bosnia and Herzegovina",  "Belarus", "Faeroe Islands", "Vatican City State", "San Marino", 
                            "Albania", "Former Yugoslav Republic of Macedonia (F", "Moldova, Republic of", "Russian Federation", "Holy See (Vatican City State)", 
-                           "Macedonia, the former Yugoslav Republic of", "United Nations Interim Administration in Kosovo"), 
-                  new = rep("Other Europe", 44))
+                           "Macedonia, the former Yugoslav Republic of", "United Nations Interim Administration in Kosovo",
+                           "Germany, Democratic Republic of", "Kosovo", "Union of Soviet Socialist Republics", "Yugoslavia/Serbia and Montenegro",
+                           "Former Yugoslav Republic of Macedonia (FYROM)"), 
+                  new = rep("Other Europe", 50))
                   
    x <- rename.levels(x, 
                   orig = c("Malaysia", "Thailand", "India", "Philippines", "Sri Lanka", "Pakistan", "Indonesia", "Viet Nam", "Mongolia", "Timor-Leste", 
@@ -172,9 +183,10 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                   orig = c("NZ", "New Caledonia", "Tonga", "Fiji", "Cook Islands", "Samoa", "Niue", "French Polynesia", "Vanuatu", "Papua New Guinea", 
                            "Solomon Islands", "Guam", "Tokelau", "Samoa, American", "Antarctica", "Kiribati", "Palau", "Tuvalu", "Micronesia, Federated States of", 
                            "Marshall Islands", "Rest of Oceania", "Northern Mariana Islands", "Nauru", "Wallis and Futuna", "Not Stated",
+                           "French Southern Territories", "South Georgia and the South Sandwich Islands",
                            # Incorrect European countries
                            "Hungary", "Lithuania", "Russia", "Latvia", "Slovakia", "Armenia", "Ukraine", "Poland", "Estonia","Kazakhstan", "Kyrgyzstan", "Uzbekistan"), 
-                  new = rep("Other Countries", 37))
+                  new = rep("Other Countries", 38))
                   
    x <- rename.levels(x, 
                      orig = c("South Africa", "United Arab Emirates", "Oman", "Turkey", "Bahrain", "Kenya", "Reunion", "Botswana", "Saudi Arabia", "Kuwait", 
@@ -183,8 +195,9 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                                  "Jordan", "Cape Verde", "Uganda", "Egypt", "Mali", "Cote d'Ivoire", "Gabon", "Eritrea", "Angola", "Mozambique", "Seychelles", "Ethiopia", "Algeria", "Western Sahara", 
                                  "Gaza Strip/Palestine/West Bank", "Syria", "Benin", "Burkina Faso", "Central African Republic", "Chad", "Congo, the Democratic Republic of the", "Equatorial Guinea", 
                                  "Gambia", "Guinea-Bissau", "Niger", "Sao Tome and Principe", "Senegal", "Togo", "Burundi", "Comoros", "Djibouti", "Mayotte", "Syrian Arab Republic", 
-                                 "Tanzania, United Republic of", "Palestinian Territories, Occupied", "Cote d'Ivoire", "Middle East", "Rest of Africa", "Guinea", "Rwanda"), 
-                     new = rep("Other Countries", 78))
+                                 "Tanzania, United Republic of", "Palestinian Territories, Occupied", "Cote d'Ivoire", "Middle East", 
+                              "Rest of Africa", "Guinea", "Rwanda", "Cabo Verde", "South Sudan", "Yemen, Democratic"), 
+                     new = rep("Other Countries", 81))
                      
    x <- rename.levels(x, 
                      orig = c("Argentina", "Chile", "Brazil", "Mexico", "Ecuador", "Costa Rica", "Jamaica", "Panama", "Cayman Islands", "Colombia", "Uruguay", "Peru", "Paraguay", 
