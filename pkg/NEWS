@@ -4,7 +4,9 @@ mbie 0.8.9
 *  Created function YearEnd(), and associated helpfiles.  Eric Wu peer reviewed
 *  20/2/15 by EW - reviewed and fix mbie_footer.Rd
 *  PE added some more countries to CountryGroup()
-* PE moved plyr and reshape to 'suggests'
+*  PE moved plyr and reshape to 'suggests'
+*  PE removed all the Statplanet code and examples
+*  PE deleted xlsx to R
 
 mbie 0.8.8
 *  Modified by  Antonia Milkop 17/9/14
