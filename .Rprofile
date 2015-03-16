@@ -8,16 +8,9 @@
 # rather than to the folder used for libraries by everyone
 .libPaths(c("P:/r/libraries/aaa test libraries", "P:/r/libraries/current"))
 
-##  .libPaths(c("P:/r/libraries/AAA TEST LIBRARIES", .libPaths()))
- 
- # the usual command to point the libraries at the right spot
- ##  .libPaths(c("P:/R/libraries/current",.libPaths()))
-
 
  library(utils)
  library(Defaults)
-#  library(mbie)
-#  library(mbiedata)
  
  setDefaults(q, save="no")
  useDefaults(q)
