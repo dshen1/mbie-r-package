@@ -34,13 +34,13 @@
 # } 
 
 ## the above code have problem to call if compiled in package. so EW changed to following on 20/2/15
-MemoryObjUse <- function (pos = 1, pat = "") {     
+MemoryObjUse <- function (pos = 1, pattern = "", ...) {     
    dimx <- 
       function(dd) {
          if (is.null(dim(dd))) length(dd) else dim(dd) 
       }
    
-   lll <- ls(pos = pos, pat = pat) 
+   lll <- ls(pos = pos, pattern = pattern, ...) 
    
    rst <- data.frame(
       mode = sapply(lll,function(x){eval(parse(t = paste("mode(", x, ")")))}),

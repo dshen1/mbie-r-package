@@ -1,9 +1,9 @@
 \name{MemoryObjUse}
 \alias{MemoryObjUse}
-\alias{MemoryUse}
-\alias{MemoryObjectUse}
-\alias{ObjectMemoryUse}
-\alias{ObjMemoryUse}
+\concept{MemoryUse}
+\concept{MemoryObjectUse}
+\concept{ObjectMemoryUse}
+\concept{ObjMemoryUse}
 
 \title{
 Size of memory used by objects - function
@@ -12,11 +12,12 @@ Size of memory used by objects - function
 Function to return a list of objects currently being used by R, and their associated memory use (Kb)
 }
 \usage{
-MemoryObjUse()
+MemoryObjUse(pos, pat)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{}
+  \item{pos}{specifying the environment as a position in the search list. Mostly there for back compatibility.}
+  \item{pattern}{an optional regular expression. Only names matching pattern are returned. glob2rx can be used to convert wildcard patterns to regular expressions}
 
 }
 \details{
@@ -41,8 +42,11 @@ Antonia Milkop <antonia.milkop@mbie.govt.nz>
 \code{\link{Memory}}
 }
 \examples{
+vec1 <- 1:4
+matrix1 <- as.matrix(vec1, nrow =2)
+func1 <- function(x){x^2}
 MemoryObjUse()
-
+MemoryObjUse(pos = 1, pattern = "mat")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

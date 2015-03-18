@@ -8,11 +8,12 @@
   Function to convert any given time period to a year end, based on a YearEnd setting.
 }
 \usage{
-  YearEnd("YYYY-MM-DD", x)
+  YearEnd(TimePeriod, YrEndMthNum)
 }
 %- maybe also 'usage' for other objects documented here.
-\arguments{ x   Numeric YearEnd setting , i.e. 3 for March Year End; 12 for December Year End
-  \item{x}{}
+\arguments{ 
+  \item{TimePeriod}{The date string(vector) with format "YYYY-MM-DD".}
+  \item{YrEndMthNum}{The number of Year Ending Month. i.e. 3 for March Year End; 12 for December Year End.}
   
 }
 \details{
@@ -37,10 +38,12 @@
 \examples{
 # Example 1 - convert the date 31 March 2014 to a year ending March
 YearEnd("2014-03-31",3)
-# Example 1 - convert the date 1 April 2014 to a year ending March
+# Example 2 - convert the date 1 April 2014 to a year ending March
 YearEnd("2014-04-01",3)
-# Example 1 - convert the date 31 April 2014 to a year ending June
+# Example 3 - convert the date 31 April 2014 to a year ending June
 YearEnd("2014-04-30",6)
+# Example 4 - convert a vector of timePeriods.
+YearEnd(c("2014-03-31","2014-04-01"),3)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -2,9 +2,8 @@
 # Antonia Milkop, Jan 2015.  Eric Wu developed it
 
 YearEnd <- 
-   function(TimePeriod, YearEnd = 12){    
-      require(lubridate)
-      Year <- year(TimePeriod)
-      Year <- ifelse(month(TimePeriod)>YearEnd, Year+1, Year)
+   function(TimePeriod, YrEndMthNum = 12){    
+      Year <- lubridate::year(TimePeriod)
+      Year <- ifelse(lubridate::month(TimePeriod)>YrEndMthNum, Year+1, Year)
       return(Year)
    }

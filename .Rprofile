@@ -6,7 +6,7 @@
 
  # Set the library path so the Test folder is listed first and the installation will be to there,
 # rather than to the folder used for libraries by everyone
-.libPaths(c("P:/r/libraries/aaa test libraries", "P:/r/libraries/current"))
+.libPaths(c("P:/r/libraries/aaa test libraries", "P:/r/libraries/3.1.2"))
 
 
  library(utils)
