@@ -40,12 +40,14 @@ Peter Ellis, generalised from xiechao at http://stackoverflow.com/questions/2351
 
 }
 \examples{
+library(mbie)
 #--------Toy example---------
 wrap("A very long string here")
 cat(wrap("A very long string here", 20))
 
 #----------Example in a plot-----------
 data(IVStrips)
+
 tmp <- ddply(IVStrips, .(COPRTop5), summarise, Pop = sum(FinalWeight), Sample=length(FinalWeight))
 
 tmp$FacetLabels <- wrap(tmp$COPRTop5)

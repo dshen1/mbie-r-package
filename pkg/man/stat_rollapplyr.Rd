@@ -54,9 +54,9 @@ Data must be sorted so that when subsetted by group x is sequential from earlies
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-structure(function (...) 
-get(x, envir = this, inherits = inh)(this, ...), class = c("instantiatedProtoMethod", 
-"function"), this = <environment>)
+#  structure(function (...) 
+#  get(x, envir = this, inherits = inh)(this, ...), class = c("instantiatedProtoMethod", 
+#  "function"), this = <environment>)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

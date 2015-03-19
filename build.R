@@ -12,6 +12,6 @@ build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive", binary=TRUE)
 build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive", binary=FALSE)
 
 ## load package
-rm(list=ls())
-if("package:mbie" %in% search()) detach("package:mbie")
-library(mbie)
+# rm(list=ls())
+# if("package:mbie" %in% search()) detach("package:mbie")
+# library(mbie)
