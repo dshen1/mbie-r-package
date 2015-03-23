@@ -26,7 +26,7 @@ www.mbie.govt.nz
 }
 
 \examples{
+data(TA_lookup)
 head(TA_lookup)
-
 }
 \keyword{datasets}

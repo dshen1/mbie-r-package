@@ -56,6 +56,7 @@ The country groupings provided by "TNZ2013" are not exactly as might be expected
 \examples{
 
 # Total sample size over 16.5 years of the old IVS
+library(mbiedata)
 data(IVStrips)
 table(CountryGroup(IVStrips$COPRDetail))
 table(CountryGroup(IVStrips$COPRDetail, shorten=FALSE))

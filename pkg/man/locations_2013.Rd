@@ -32,6 +32,7 @@ data(IVSvisits)
 data(locations_2013)
 library(mbiemaps)
 data(region_simpl_gg)
+library(plyr)
 
 # merge 2012 data from IVS visits with location information
 visits <-  merge(IVSvisits[IVSvisits$InterviewYear==2012, c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],

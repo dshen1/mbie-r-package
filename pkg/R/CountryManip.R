@@ -186,7 +186,7 @@ CountryGroup <- function(x, shorten=TRUE, type="IVSweights", OneChina_first=FALS
                            "French Southern Territories", "South Georgia and the South Sandwich Islands",
                            # Incorrect European countries
                            "Hungary", "Lithuania", "Russia", "Latvia", "Slovakia", "Armenia", "Ukraine", "Poland", "Estonia","Kazakhstan", "Kyrgyzstan", "Uzbekistan"), 
-                  new = rep("Other Countries", 38))
+                  new = rep("Other Countries", 39))
                   
    x <- rename.levels(x, 
                      orig = c("South Africa", "United Arab Emirates", "Oman", "Turkey", "Bahrain", "Kenya", "Reunion", "Botswana", "Saudi Arabia", "Kuwait", 

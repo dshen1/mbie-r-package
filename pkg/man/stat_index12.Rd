@@ -53,7 +53,8 @@ Data must be sorted so that when subsetted by group x is sequential from earlies
   
   #Connect to TRED
   creds <- AskCreds()
-  TRED1 <- odbcConnect("TRED64", uid=creds$uid, pwd=creds$pwd)
+  #TRED1 <- odbcConnect("TRED64", uid=creds$uid, pwd=creds$pwd)
+  TRED1 <- odbcConnect("TRED_Prod")
   
   cyspend <- sqlQuery(TRED1, "select n.YEAR_NUMBER+(n.MONTH_NUMBER-.5)/12 period, 
     	YEAR_NUMBER Year, MONTH_NUMBER Month,  n.PERIOD_ID, CY_NAME Country,

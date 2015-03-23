@@ -20,16 +20,17 @@ This data and code are available under a Creative Commons license - see http://i
 
 ```{r, RTESeg, warnings=FALSE, message=FALSE, dev="png", fig.align='center', fig.width=9, tidy=FALSE}
 
+library(mbiedata)
 data(RTEs)
 
 require(treemap)
 
 # Estimate compound annual growth rate
-growth <- ddply(RTEs, .(Territorial_Authority, Region), summarise,
+growth <- plyr::ddply(RTEs, .(Territorial_Authority, Region), summarise,
                 growth=CAGR(sum(Spend[YEMar==2013]) / sum(Spend[YEMar==2009]), 4))
 
 # Merge with the absolute size of tourism in 2013
-RTE2 <- merge(ddply(subset(RTEs, YEMar==2013), .(Territorial_Authority, Region), summarise,
+RTE2 <- merge(plyr::ddply(subset(RTEs, YEMar==2013), .(Territorial_Authority, Region), summarise,
                     Spend=sum(Spend)),
               growth)
 
@@ -56,7 +57,7 @@ library(ggplot2)
 library(ggthemes)
 
 data(IVStrips)
-tmp <- ddply(IVStrips, .(YearQuarter, CountryGroup(COPRTop5)), summarise, Total= sum(SmoothTotalSpend * FinalWeight * Adjusted_Factor))
+tmp <- plyr::ddply(IVStrips, .(YearQuarter, CountryGroup(COPRTop5)), summarise, Total= sum(SmoothTotalSpend * FinalWeight * Adjusted_Factor))
 tmp$period <- with(tmp, as.numeric(substring(YearQuarter, 1, 4)) + (as.numeric(substring(YearQuarter, 6, 6))-.5)/4)
 names(tmp)[2] <- "Country"
 
@@ -86,7 +87,7 @@ data(RTO)
 data(RTEs)
 
 # Aggregate domestic tourism spend and average annual growth rate
-dom <- ddply(subset(RTEs, Type == "Domestic"), .(RTO), summarise,
+dom <- plyr::ddply(subset(RTEs, Type == "Domestic"), .(RTO), summarise,
   Growth = CAGR(sum(Spend[YEMar==2013]) / sum(Spend[YEMar==2009]), 4),
   Spend2013 = sum(Spend[YEMar==2013]))
 	

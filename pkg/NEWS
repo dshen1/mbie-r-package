@@ -7,6 +7,7 @@ mbie 0.8.9
 *  PE moved plyr and reshape to 'suggests'
 *  PE removed all the Statplanet code and examples
 *  PE deleted xlsx to R
+*  18/3/15 by EW - edit helpfile for YearEnd() and MemoryObjUse().
 
 mbie 0.8.8
 *  Modified by  Antonia Milkop 17/9/14
