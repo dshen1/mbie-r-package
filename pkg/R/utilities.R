@@ -9,18 +9,33 @@ FormatDollars <- function(x, endmark="", ...){
   return(x)
 }
 
-wrap <- function(s, n=10){
-  # function inserts line breaks every 10 (or n) characters
-  # adapted from http://stackoverflow.com/questions/2351744/insert-line-breaks-in-long-string-word-wrap
-  
-  tmp <- gsub(paste0('(.{1,', n, '})(\\s|$)'), '\\1\n', s)
-  
-  # strip off the last 2 characters
-  nc <- nchar(tmp)
-  tmp <- substring(tmp, 1, nc-1)
-  return(tmp)
-}
+# wrap <- function(s, n=10){
+#   # function inserts line breaks every 10 (or n) characters
+#   # adapted from http://stackoverflow.com/questions/2351744/insert-line-breaks-in-long-string-word-wrap
+#   
+#   tmp <- gsub(paste0('(.{1,', n, '})(\\s|$)'), '\\1\n', s)
+#   
+#   # strip off the last 2 characters
+#   nc <- nchar(tmp)
+#   tmp <- substring(tmp, 1, nc-1)
+#   return(tmp)
+# }
+# 
 
+wrap <- function(s, n=10, sep="\n"){
+   if(!sep %in% c("\n", "<br>")){
+      stop("sep must be \\n or <br>")
+   }
+   if(sep == "\n"){
+      tmp <- gsub(paste0("(.{1,", n, "})(\\s|$)"), "\\1\n", s)  
+      nc <- nchar(tmp)
+      tmp <- substring(tmp, 1, nc - 1)
+      
+   } else {
+      tmp <- gsub(paste0("(.{1,", n, "})(\\s|$)"), "\\1<br>", s)  
+   }
+   return(tmp)
+}
 
 #---------------Index and Index12---------------
 
