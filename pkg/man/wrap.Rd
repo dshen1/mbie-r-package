@@ -7,7 +7,7 @@ Insert line breaks
 Inserts conveniently placed line breaks in a string or vector of strings.
 }
 \usage{
-wrap(s, n, sep)
+wrap(s, n=, sep=)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,7 +18,7 @@ Character string or vector of them to have line breaks inserted.
 Maximum number of characters between line breaks. Default is 10.
 }
   \item{sep}{
-Line break format. Default is n. Also works for html's <br>.
+Line break format. Default is \\n. Also works for html's <br>.
 }
 }
 \details{
@@ -43,9 +43,13 @@ Peter Ellis, generalised from xiechao at http://stackoverflow.com/questions/2351
 
 }
 \examples{
-#--------Toy example---------
+#--------Toy examples---------
 wrap("A very long string here")
 cat(wrap("A very long string here", 20))
+
+wrap("A very long string here", sep="<br>")
+print(wrap("A very long string here", n=15, sep="<br>"))
+
 
 #----------Example in a plot-----------
 library(dplyr)
