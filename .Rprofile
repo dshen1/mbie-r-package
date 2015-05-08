@@ -20,3 +20,6 @@
  Sys.setenv(SDMX_CONF = "P:/R/configuration.properties")
 
 
+.Last <- function(){ 
+   unlink("P:/r/libraries/AAA TEST LIBRARIES/mbie", recursive = TRUE, force = TRUE)
+}

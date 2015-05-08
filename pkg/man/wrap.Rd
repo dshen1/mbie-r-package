@@ -18,7 +18,7 @@ Character string or vector of them to have line breaks inserted.
 Maximum number of characters between line breaks. Default is 10.
 }
   \item{sep}{
-Line break format. Default is n. Also works for html's <br>.
+Line break format. Default is "\\n". Also works for html's <br>.
 }
 }
 \details{
