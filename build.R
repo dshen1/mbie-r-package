@@ -26,7 +26,7 @@ library(package = "mbie", lib.loc = "P:/r/libraries/AAA TEST LIBRARIES")
 
 ############################################################################
 ## Test the package --------------------------------------------------------
-## after load the wroking version, go though the examples of newly added fucntions and check if they work properly.
+## after load the working version, go though the examples of newly added functions and check if they work properly.
 ############################################################################
 
 
