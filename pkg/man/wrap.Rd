@@ -7,7 +7,7 @@ Insert line breaks
 Inserts conveniently placed line breaks in a string or vector of strings.
 }
 \usage{
-wrap(s, n=, sep=)
+wrap(s, n=10, sep="\\n")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,7 +18,7 @@ Character string or vector of them to have line breaks inserted.
 Maximum number of characters between line breaks. Default is 10.
 }
   \item{sep}{
-Line break format. Default is \\n. Also works for html's <br>.
+Line break format. Default is R code "\\n". Also works for html code "<br>".
 }
 }
 \details{
