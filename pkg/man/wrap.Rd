@@ -18,7 +18,7 @@ Character string or vector of them to have line breaks inserted.
 Maximum number of characters between line breaks. Default is 10.
 }
   \item{sep}{
-Line break format. Default is R code "\\n". Also works for html code "<br>".
+Line break expression. Default is \\n for R code. Can also specify <br> for html code.
 }
 }
 \details{
@@ -56,8 +56,8 @@ library(dplyr)
 library(mbiedata)
 data(IVStrips)
 
-tmp <- IVStrips %>%
-   group_by(COPRTop5) %>%
+tmp <- IVStrips \%>\%
+   group_by(COPRTop5) \%>\%
    summarise(
       Pop = sum(FinalWeight),
       Sample=length(FinalWeight)
