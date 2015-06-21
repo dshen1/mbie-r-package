@@ -54,9 +54,19 @@ Roundthis(with(airquality, table(cut(Temp, quantile(Temp)), Month)), type="Base3
 
 
 data(IVStrips)
-require(reshape2)
+library(tidyr)
+library(dplyr)
 
 # Unrounded:
+NotRound <- IVStrips %>%
+
+IVStrips %>%
+   filter(YearQuarter == "2013 1") %>%
+   group_by(COPRTop5, POVTop3) %>%
+   summarise(length) %>%
+   spread(COPRTop5, POVTop3) %>%
+   data.frame()
+
 dcast(subset(IVStrips, YearQuarter=="2013 1"),
   COPRTop5 ~ POVTop3,
   length,

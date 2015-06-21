@@ -55,8 +55,13 @@ animation_frames(plot2, start = 10, dev="png", filename="AirPassengers")
 
 # Example 3 - more complex time series
 library(Cairo)
+library(dplyr)
 data(IVStrips)
-tmp <- ddply(IVStrips, .(YEJun, POVTop3, COPRTop5), summarise, Spend = sum(FinalWeight * SmoothTotalSpend * Adjusted_Factor))
+tmp2 <- IVStrips %>%
+         group_by(YEJun, POVTop3, COPRTop5) %>%
+         summarise(Spend = sum(FinalWeight * SmoothTotalSpend * Adjusted_Factor)) %>%
+         data.frame()
+
 plot3 <- ggplot(tmp, aes(x=YEJun, y = Spend / 10 ^ 6, colour=COPRTop5)) +
   facet_wrap( ~ POVTop3) +
 	geom_line() +
