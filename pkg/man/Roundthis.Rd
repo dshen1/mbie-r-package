@@ -58,19 +58,12 @@ library(tidyr)
 library(dplyr)
 
 # Unrounded:
-NotRound <- IVStrips %>%
-
 IVStrips %>%
    filter(YearQuarter == "2013 1") %>%
    group_by(COPRTop5, POVTop3) %>%
-   summarise(length) %>%
-   spread(COPRTop5, POVTop3) %>%
+   summarise(sampleorig = length(POVTop3)) %>%
+   spread(POVTop3, sampleorig) %>%
    data.frame()
-
-dcast(subset(IVStrips, YearQuarter=="2013 1"),
-  COPRTop5 ~ POVTop3,
-  length,
-  value.var="COPRTop5")
 
 # Graduated random rounding:
 dcast(subset(IVStrips, YearQuarter=="2013 1"),
