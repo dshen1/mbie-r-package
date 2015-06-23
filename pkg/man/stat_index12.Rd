@@ -37,7 +37,7 @@ Required aesthetics are x and y; x is usually a time variable.
 Peter Ellis <peter.ellis@mbie.govt.nz>
 }
 \note{
-Data must be sorted so that when subsetted by group x is sequential from earliest to latest.  If \code{data} is created by ddply, melt or dcast this will usually happen naturally.  If \code{data} comes from a database you should incorporate a \code{ORDER BY ...} statement in the SQL that imports it to R.
+Data must be sorted so that when subsetted by group x is sequential from earliest to latest.  If \code{data} is created by group_by (dplyr) or ddply (plyr); gather (tidyr) or melt (reshape2); or spread (tidyr) or dcast (reshape2), this will usually happen naturally.  If \code{data} comes from a database you should incorporate a \code{ORDER BY ...} statement in the SQL that imports it to R.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
