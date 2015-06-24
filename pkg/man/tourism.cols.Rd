@@ -45,21 +45,27 @@ tourism.cols("Alternating")
 
 plot(rep(1:6, 3), rep(1:3, each=6), type="n", bty="n", axes=F, 
   xlab="", ylab="", xlim=c(0,7), ylim=c(0,4),
-  main="The Tourism palette")
+  main="Tourism colours palette")
 text(rep(1:6, 3), rep(1:3, each=6), label=1:18, col=tourism.cols(1:18), pch=19, cex=4)
 
-library(plyr)
+library(dplyr)
 library(scales)
 library(ggplot2)
+library(mbiedata)
 data(IVStrips)
-tmp <- ddply(IVStrips, .(YearQuarter, POVTop3, COPRTop5), summarise, Total= sum(SmoothTotalSpend * FinalWeight))
+
+tmp <- IVStrips %>%
+            group_by(YearQuarter, POVTop3, COPRTop5) %>%
+            summarise(Total = sum(SmoothTotalSpend * FinalWeight * Adjusted_Factor))
+
 tmp$period <- with(tmp, as.numeric(substring(YearQuarter, 1, 4)) + (as.numeric(substring(YearQuarter, 6, 6))-.5)/4)
-ggplot(tmp, aes(x=period, y=Total, color=POVTop3)) +
-  stat_sa(frequency=4, geom="point", size=2) +
-  stat_sa(frequency=4, size=2) +
-  geom_line(frequency=4, size=1, alpha=.5) +
-  scale_color_manual(values=tourism.cols("Alternating")) +
-  facet_wrap(~COPRTop5, scale="free_y") +
+
+ggplot(tmp, aes(x = period, y = Total, color = POVTop3)) +
+  stat_sa(frequency = 4, geom = "point", size = 1) +
+  stat_sa(frequency = 4, size = 1) +
+  geom_line(frequency = 4, size = 0.5, alpha = 0.5) +
+  scale_color_manual(values = tourism.cols("Alternating")) +
+  facet_wrap(~COPRTop5, scale = "free_y") +
   ggtitle("Seasonally adjusted spend by purpose of visit")
   
 

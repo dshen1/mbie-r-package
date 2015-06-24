@@ -28,18 +28,24 @@ www.mbie.govt.nz
 
 \examples{
 require(ggplot2)
+library(mbiedata)
 data(IVSvisits)
 data(locations_2013)
 library(mbiemaps)
 data(region_simpl_gg)
-library(plyr)
+library(dplyr)
 
 # merge 2012 data from IVS visits with location information
-visits <-  merge(IVSvisits[IVSvisits$InterviewYear==2012, c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],
+visits <-  merge(IVSvisits[IVSvisits$InterviewYear==2012,
+               c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],
                   locations_2013, 
                   by.x="VisitOriginPlace", by.y="IVS1_Label")
 
 # summarise visits by region and remove duplicates
+
+visits2 <- visits %>%
+            distinct()
+
 visits2 <- ddply(visits[!duplicated(visits[c("IDNumber", "Region")]),], .(Region), summarise, Visitors = sum(FinalWeight), Sample = length(FinalWeight))
 
 # merge onto map data

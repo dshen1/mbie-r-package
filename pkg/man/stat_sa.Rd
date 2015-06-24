@@ -50,24 +50,28 @@ Data must be sorted so that when subsetted by group x is sequential from earlies
 }
 \examples{
 #----------------------IVS example with quarterly data-----------------------
-library(plyr)
+library(dplyr)
 library(scales)
 library(ggplot2)
+library(mbiedata)
 data(IVStrips)
 
-tmp <- ddply(IVStrips, .(YearQuarter, POVTop3, COPRTop5), summarise, 
-  Total= sum(SmoothTotalSpend * FinalWeight * Adjusted_Factor))
+tmp <- IVStrips %>%
+            group_by(YearQuarter, POVTop3, COPRTop5) %>%
+            summarise(Total = sum(SmoothTotalSpend * FinalWeight * Adjusted_Factor))
+
 tmp$period <- with(tmp, as.numeric(substring(YearQuarter, 1, 4)) + 
                     (as.numeric(substring(YearQuarter, 6, 6))-.5)/4)
 
-ggplot(tmp, aes(x=period, y=Total, color=POVTop3)) +
-  stat_sa(frequency=4, geom="point", size=2) +
-  stat_sa(frequency=4, size=2) +
-  geom_line(frequency=4, size=1, alpha=.5) +
-  scale_color_manual(values=tourism.cols("Alternating")) +
-  facet_wrap(~COPRTop5, scale="free_y") +
+ggplot(tmp, aes(x = period, y = Total, color = POVTop3)) +
+  stat_sa(frequency = 4, geom = "point", size = 1) +
+  stat_sa(frequency = 4, size = 1) +
+  geom_line(frequency = 4, size = 0.5, alpha = 0.5) +
+  scale_color_manual(values = tourism.cols("Alternating")) +
+  facet_wrap(~COPRTop5, scale = "free_y") +
   ggtitle("Seasonally adjusted spend by purpose of visit")
   
+
 #-------------RTIs example, incorporating indexing------------------------  
 \dontrun{
   library(RODBC)
