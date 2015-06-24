@@ -35,8 +35,8 @@ library(mbiemaps)
 data(region_simpl_gg)
 library(dplyr)
 
-# merge 2012 data from IVS visits with location information
-visits <-  merge(IVSvisits[IVSvisits$InterviewYear==2012,
+# merge 2013 data from IVS visits with location information
+visits <-  merge(IVSvisits[IVSvisits$InterviewYear == 2013,
                c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],
                   locations_2013, 
                   by.x="VisitOriginPlace", by.y="IVS1_Label")
@@ -44,18 +44,21 @@ visits <-  merge(IVSvisits[IVSvisits$InterviewYear==2012,
 # summarise visits by region and remove duplicates
 
 visits2 <- visits %>%
-            distinct()
-
-visits2 <- ddply(visits[!duplicated(visits[c("IDNumber", "Region")]),], .(Region), summarise, Visitors = sum(FinalWeight), Sample = length(FinalWeight))
+            distinct(IDNumber, Region) %>%
+            group_by(Region) %>%
+            summarise(
+               Visitors = sum(FinalWeight),
+               Sample = length(FinalWeight)
+               )
 
 # merge onto map data
 visits3 <- merge(visits2, region_simpl_gg ,by.x="Region", by.y="NAME", all.y=TRUE)
 
 # Draw plot
 ggplot(visits3, aes(x = long, y = lat, group = group, fill = Visitors)) +
-  geom_polygon(colour = "grey60") +
-  theme_nothing() + scale_fill_continuous(label=comma, low = "white", high = "blue") +
-  labs(title="Visitors by Region in 2012")
+   geom_polygon(colour = "grey60") +
+   theme_nothing() + scale_fill_continuous(label=comma, low = "white", high = "blue") +
+   labs(title="Visitors by Region in 2013")
   
 }
 \keyword{datasets}
