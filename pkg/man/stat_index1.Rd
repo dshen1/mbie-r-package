@@ -46,14 +46,19 @@ Data must be sorted so that when subsetted by group x is sequential from earlies
 \code{\link{Index}}, \code{\link{stat_index12}}, \code{\link{stat_sa}}, \code{\link{stat_rollapplyr}}
 }
 \examples{
+require(dplyr)
 require(ggplot2)
+require(mbiedata)
 data(IVStrips)
-tourists <- ddply(subset(IVStrips, YEJun>1997), .(YEJun, COPRTop5), summarise, 
-                  Spend=sum(SpendxWeight * Adjusted_Factor))
 
-ggplot(tourists, aes(x=YEJun, y=Spend, color=COPRTop5)) +
+tourists <- IVStrips %>%
+               filter(YEJun > 1997) %>%
+               group_by(YEJun, COPRTop5) %>%
+               summarise(Spend = sum(SpendxWeight * Adjusted_Factor))
+
+ggplot(tourists, aes(x = YEJun, y = Spend, colour = COPRTop5)) +
   stat_index1() +
-  stat_index1(geom="point", shape=2, size=3)
+  stat_index1(geom = "point", shape = 2, size = 3)
 
 
 }

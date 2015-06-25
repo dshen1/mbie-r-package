@@ -7,7 +7,7 @@ Insert line breaks
 Inserts conveniently placed line breaks in a string or vector of strings.
 }
 \usage{
-wrap(s, n=10, sep="\\n")
+wrap(s, n = 10, sep = "\\n")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -47,8 +47,8 @@ Peter Ellis, generalised from xiechao at http://stackoverflow.com/questions/2351
 wrap("A very long string here")
 cat(wrap("A very long string here", 20))
 
-wrap("A very long string here", sep="<br>")
-print(wrap("A very long string here", n=15, sep="<br>"))
+wrap("A very long string here", sep = "<br>")
+print(wrap("A very long string here", n = 15, sep = "<br>"))
 
 
 #----------Example in a plot-----------
@@ -60,13 +60,13 @@ tmp <- IVStrips \%>\%
    group_by(COPRTop5) \%>\%
    summarise(
       Pop = sum(FinalWeight),
-      Sample=length(FinalWeight)
+      Sample = length(FinalWeight)
       )
 
 tmp$FacetLabels <- wrap(tmp$COPRTop5)
 
-ggplot(tmp, aes(x=Sample, y=Pop)) +
-  facet_wrap(~FacetLabels) +
+ggplot(tmp, aes(x = Sample, y = Pop)) +
+  facet_wrap( ~ FacetLabels) +
   geom_point()
 
 }
