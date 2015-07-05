@@ -54,7 +54,7 @@ The following postscript images, created by importing via grImport:
 \author{
 MBIE Sector Performance team
 
-Maintainer: Peter Ellis <peter.ellis@mbie.govt.nz>
+Maintainer: Pete McMillen <pete.mcmillen@mbie.govt.nz>
 
 }
 \references{

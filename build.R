@@ -14,7 +14,8 @@ require(devtools)
 ############################################################################
 ## build, install and load package in test folder --------------------------
 ## Build the binary package in the test folder
-build(pkg ="pkg", path= "P:/R/libraries/AAA TEST LIBRARIES", binary=TRUE)
+build(pkg = "pkg", path = "P:/R/libraries/AAA TEST LIBRARIES", binary = TRUE)
+build(pkg = "pkg", path = "P:/R/libraries/AAA TEST LIBRARIES", binary = FALSE)
 
 ## install the package to test folder
 install.packages("P:/R/libraries/AAA TEST LIBRARIES/mbie_0.9.0.zip",repos = NULL,lib = "P:/R/libraries/AAA TEST LIBRARIES")
