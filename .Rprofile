@@ -10,7 +10,7 @@ source("P:/R/common.Rprofile")
 ## rather than to the folder used for libraries by everyone
 .libPaths(c("P:/R/libraries/AAA TEST LIBRARIES", .libPaths()))
 
-## delete the pacakeg folder from test folder when quiting R, to avoid write permission conflicts
+## delete the package folder from test folder when quiting R, to avoid write permission conflicts
 .Last <- function(){ 
    unlink("P:/R/libraries/AAA TEST LIBRARIES/mbie", recursive = TRUE, force = TRUE)
    unlink("P:/R/libraries/AAA TEST LIBRARIES/mbie_*", recursive = TRUE, force = TRUE)

@@ -36,10 +36,9 @@ data(region_simpl_gg)
 library(dplyr)
 
 # merge 2013 data from IVS visits with location information
-visits <-  merge(IVSvisits[IVSvisits$InterviewYear == 2013,
-               c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],
+visits <-  merge(IVSvisits[IVSvisits$InterviewYear == 2013, c("IDNumber", "VisitOriginPlace", "FinalWeight", "POVArrival")],
                   locations_2013, 
-                  by.x="VisitOriginPlace", by.y="IVS1_Label")
+                  by.x = "VisitOriginPlace", by.y = "IVS1_Label")
 
 # summarise visits by region and remove duplicates
 
