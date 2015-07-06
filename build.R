@@ -6,7 +6,7 @@ require(devtools)
 # rather than to the folder used for libraries by everyone.  This should be done in the .Rprofile
 # but in case not you can always run the line below:
 
-.libPaths(c("P:/R/libraries/AAA TEST LIBRARIES",.libPaths()))
+.libPaths(c("P:/R/libraries/AAA TEST LIBRARIES", .libPaths()))
 ############################################################################
 
 
@@ -18,7 +18,7 @@ build(pkg = "pkg", path = "P:/R/libraries/AAA TEST LIBRARIES", binary = TRUE)
 build(pkg = "pkg", path = "P:/R/libraries/AAA TEST LIBRARIES", binary = FALSE)
 
 ## install the package to test folder
-install.packages("P:/R/libraries/AAA TEST LIBRARIES/mbie_0.9.0.zip",repos = NULL,lib = "P:/R/libraries/AAA TEST LIBRARIES")
+install.packages("P:/R/libraries/AAA TEST LIBRARIES/mbie_0.9.0.zip", repos = NULL, lib = "P:/R/libraries/AAA TEST LIBRARIES")
 
 ## load the package from test folder
 library(package = "mbie", lib.loc = "P:/R/libraries/AAA TEST LIBRARIES")

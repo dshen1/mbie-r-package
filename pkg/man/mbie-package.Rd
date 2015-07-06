@@ -14,7 +14,7 @@ A collection of functions, colour palettes and data commonly used by the New Zea
 Package: \tab mbie\cr
 Type: \tab Package\cr
 Version: \tab 0.9.0\cr
-Date: \tab 2015-03-30\cr
+Date: \tab 2015-07-06\cr
 License: \tab GPL-3\cr
 }
 This package provides:
