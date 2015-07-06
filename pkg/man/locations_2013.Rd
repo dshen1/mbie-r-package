@@ -43,9 +43,9 @@ visits <-  merge(IVSvisits[IVSvisits$InterviewYear == 2013,
 
 # summarise visits by region and remove duplicates
 
-visits2 <- visits %>%
-            distinct(IDNumber, Region) %>%
-            group_by(Region) %>%
+visits2 <- visits \%>\%
+            distinct(IDNumber, Region) \%>\%
+            group_by(Region) \%>\%
             summarise(
                Visitors = sum(FinalWeight),
                Sample = length(FinalWeight)

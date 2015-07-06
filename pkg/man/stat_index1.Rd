@@ -51,9 +51,9 @@ require(ggplot2)
 require(mbiedata)
 data(IVStrips)
 
-tourists <- IVStrips %>%
-               filter(YEJun > 1997) %>%
-               group_by(YEJun, COPRTop5) %>%
+tourists <- IVStrips \%>\%
+               filter(YEJun > 1997) \%>\%
+               group_by(YEJun, COPRTop5) \%>\%
                summarise(Spend = sum(SpendxWeight * Adjusted_Factor))
 
 ggplot(tourists, aes(x = YEJun, y = Spend, colour = COPRTop5)) +

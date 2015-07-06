@@ -70,8 +70,8 @@ library(dplyr)
 library(mbiedata)
 data(IVStrips)
 
-tmp <- IVStrips %>%
-         group_by(YEJun, POVTop3, COPRTop5) %>%
+tmp <- IVStrips \%>\%
+         group_by(YEJun, POVTop3, COPRTop5) \%>\%
          summarise(Spend = sum(FinalWeight * SmoothTotalSpend * Adjusted_Factor))
 
 plot3 <- ggplot(tmp, aes(x = YEJun, y = Spend / 10 ^ 6, colour = COPRTop5)) +

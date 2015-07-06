@@ -54,8 +54,8 @@ library(ggplot2)
 library(mbiedata)
 data(IVStrips)
 
-tmp <- IVStrips %>%
-            group_by(YearQuarter, POVTop3, COPRTop5) %>%
+tmp <- IVStrips \%>\%
+            group_by(YearQuarter, POVTop3, COPRTop5) \%>\%
             summarise(Total = sum(SmoothTotalSpend * FinalWeight * Adjusted_Factor))
 
 tmp$period <- with(tmp, as.numeric(substring(YearQuarter, 1, 4)) + (as.numeric(substring(YearQuarter, 6, 6))-.5)/4)

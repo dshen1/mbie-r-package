@@ -59,17 +59,17 @@ library(tidyr)
 library(dplyr)
 
 # Unrounded:
-IVStrips %>%
-   filter(YearQuarter == "2013 1") %>%
-   group_by(COPRTop5, POVTop3) %>%
-   summarise(sampleorig = length(POVTop3)) %>%
+IVStrips \%>\%
+   filter(YearQuarter == "2013 1") \%>\%
+   group_by(COPRTop5, POVTop3) \%>\%
+   summarise(sampleorig = length(POVTop3)) \%>\%
    spread(POVTop3, sampleorig)
 
 # Graduated random rounding:
-IVStrips %>%
-   filter(YearQuarter == "2013 1") %>%
-   group_by(COPRTop5, POVTop3) %>%
-   summarise(sampleGRR = Roundthis(length(POVTop3))) %>%
+IVStrips \%>\%
+   filter(YearQuarter == "2013 1") \%>\%
+   group_by(COPRTop5, POVTop3) \%>\%
+   summarise(sampleGRR = Roundthis(length(POVTop3))) \%>\%
    spread(POVTop3, sampleGRR)
 }
 
