@@ -287,10 +287,10 @@ Roundthis <- function(x, type="Graduated"){
 
 #------------CAGR-----------
 
-CAGR <- function(ratio, period){
-# calculate the average annual growth rate needed for something to grow
-# from 1 to the value of ?ratio? over ?period? years.? Returns a percentage.
-round((exp(log(ratio)/period)-1)*100,1)
+CAGR <- function(ratio, period, digits = 1){
+   # calculate the average annual growth rate needed for something to grow
+   # from 1 to the value of ?ratio? over ?period? years.? Returns a percentage.
+   round((exp(log(ratio)/period) - 1) * 100, digits)
 }
 
 

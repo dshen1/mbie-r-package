@@ -8,7 +8,7 @@ Function to calculate compound annual growth rate
 A tiny function to calculate compound annual growth rates
 }
 \usage{
-CAGR(ratio, period)
+CAGR(ratio, period, digits = 1)
 }
 
 \arguments{
@@ -17,6 +17,9 @@ The ratio of the value at the end of the period to its value at the beginning
 }
   \item{period}{
 Length of time, in whatever units, over which the growth rate is to be calculated
+}
+  \item{digits = 1}{
+Number of decimal places to report. Default is 1.
 }
 }
 \details{
@@ -41,12 +44,12 @@ Peter Ellis <peter.ellis@mbie.govt.nz>
 \examples{
 
 # Growth from 100 to 250 over seven years is annual growth of?:
-CAGR(2.5, 7)
+CAGR(2.5, 7, 2)
 
 # Show different CAGRs if it takes different length of time to reach 250%:
-plotG(1:7, CAGR(2.5, 1:7), 
-     xlab="Number of years to increase to 250 per cent of original level",
-     ylab="Necessary CAGR")
+plotG(1:7, CAGR(2.5, 1:7),
+     xlab = "Number of years to increase to 250 per cent of original level",
+     ylab = "Necessary CAGR")
 #
 }
 \keyword{ misc }
