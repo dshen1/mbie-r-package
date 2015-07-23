@@ -2,9 +2,9 @@ Package: mbie
 Type: Package
 Title: Miscellaneous functions and data used by New Zealand Ministry of Business, Innovation and Employment
 Version: 0.9.0
-Date: 2015-07-10
+Date: 2015-07-24
 Author: Peter Ellis
-Maintainer: Pete McMillen <pete.mcmillen@mbie.govt.nz>
+Maintainer: Eric Wu <eric.wu@mbie.govt.nz>
 Depends: R (>= 2.15.2), stats, tcltk, ggplot2, grid, scales, proto, zoo
 Suggests: mbiedata, mbiemaps, survey, sp, maps, tm, wordcloud, reshape2, dplyr, GGally, maps, proto, RODBC, XML, pbapply, png, igraph, rgl, grImport, treemap
 Enhances: ggplot2

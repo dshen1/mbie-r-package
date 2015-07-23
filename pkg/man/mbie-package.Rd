@@ -14,7 +14,7 @@ A collection of functions, colour palettes and data commonly used by the New Zea
 Package: \tab mbie\cr
 Type: \tab Package\cr
 Version: \tab 0.9.0\cr
-Date: \tab 2015-07-06\cr
+Date: \tab 2015-07-24\cr
 License: \tab GPL-3\cr
 }
 This package provides:
@@ -54,7 +54,7 @@ The following postscript images, created by importing via grImport:
 \author{
 MBIE Sector Performance team
 
-Maintainer: Pete McMillen <pete.mcmillen@mbie.govt.nz>
+Maintainer: Eric Wu <eric.wu@mbie.govt.nz>
 
 }
 \references{

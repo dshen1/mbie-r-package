@@ -45,21 +45,25 @@ Cherbane Sarri
   
   
   #Connect to TRED
-  creds <- AskCreds()
-  #TRED1 <- odbcConnect("TRED64", uid=creds$uid, pwd=creds$pwd)
-  TRED1 <- odbcConnect("TRED_Prod") 
-  
-  cyspend <- sqlQuery(TRED1, "select n.YEAR_NUMBER+(n.MONTH_NUMBER-.5)/12 period, 
-  	YEAR_NUMBER Year, MONTH_NUMBER Month,  n.PERIOD_ID, CY_A3_CODE Cycode, CY_NAME Country,
-		SUM(SPEND_COUNT) Transactions, SUM(SPEND_AMOUNT) Spend
-		FROM RTI_MAIN.INTNL_SPEND s left join
-		RTI_MAIN.INTNL_DIMENSION d on 
-		s.DIMENSION_ID = d.DIMENSION_ID 
-		right join
-		(select  p.*,c.* from RTI_MAIN.PERIOD p cross join RTI_MAIN.COUNTRY c) n
-		on s.PERIOD_ID=n.PERIOD_ID and d.ORIGIN_ID= n.CY_N4_CODE
-		group by YEAR_NUMBER, MONTH_NUMBER, n.PERIOD_ID, CY_A3_CODE, CY_NAME
-		order by YEAR_NUMBER, MONTH_NUMBER, CY_NAME")
+   TRED <- odbcConnect("TRED_Prod")
+
+   cyspend <- 
+      sqlQuery(TRED, "
+         SELECT 
+            period, Country, SUM(SpendCount) AS Transactions, SUM(SpendAmount) AS Spend
+         FROM
+            (SELECT 
+               b.Year + (b.MonthNumber - 0.5)/12 AS Period, 
+               Origin Country,
+               SpendCount,
+               SpendAmount
+            FROM [Production].[RTISpendPivot] a
+               LEFT JOIN [Production].[RTISurveyMainHeader] b
+               ON a.[SurveyResponseID] = b.[SurveyResponseID]
+               WHERE RecordType = 'International' 
+            ) c
+            GROUP BY Period, Country
+         ")
 
 subDirPath <- "P:/r/ellisp" # or whatever being used as test environment
 
