@@ -65,12 +65,10 @@ Cherbane Sarri
             GROUP BY Period, Country
          ")
 
-subDirPath <- "P:/r/ellisp" # or whatever being used as test environment
-
-source("P:/OTSP/Regional Estimation/Regional Tourism Indicators/2.Data Checking/Outlier detection functions.R") 
+subDirPath <- "P:/r/temp"  # or whatever being used as test environment
 
 # should work
-autocheck(cyspend, "COUNTRY", "TRANSACTIONS", "INTNL", subDirPath)
+autocheck(cyspend, "Country", "Spend", "INTNL", subDirPath)
 }
 }
 
