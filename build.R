@@ -42,5 +42,5 @@ library(package = "mbie", lib.loc = "P:/R/libraries/AAA TEST LIBRARIES")
 # build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive", binary=FALSE)
 # 
 # ## install the package to production libraries.
-# install.packages("P:/OTSP/data-infrastructure/archive/mbie_0.9.1.zip",repos = NULL,lib = "P:/R/libraries/3.1.2")
+# install.packages("P:/OTSP/data-infrastructure/archive/mbie_0.9.1.zip",repos = NULL,lib = "P:/R/libraries/3.1.2-20150624")
 ############################################################################
