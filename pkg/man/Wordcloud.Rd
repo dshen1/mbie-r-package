@@ -49,7 +49,7 @@ Peter Ellis
     require(tm)
     
     # Draw a wordcloud based on all text files in the directory below:
-    Wordcloud("P:OTSP/IVS/Wordclouds")
+    Wordcloud("P:/OTSP/IVS/4. Analysis/IVS Wordclouds/China highlights")
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

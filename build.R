@@ -18,7 +18,7 @@ build(pkg = "pkg", path = "P:/R/libraries/AAA TEST LIBRARIES", binary = TRUE)
 build(pkg = "pkg", path = "P:/R/libraries/AAA TEST LIBRARIES", binary = FALSE)
 
 ## install the package to test folder
-install.packages("P:/R/libraries/AAA TEST LIBRARIES/mbie_0.9.0.zip", repos = NULL, lib = "P:/R/libraries/AAA TEST LIBRARIES")
+install.packages("P:/R/libraries/AAA TEST LIBRARIES/mbie_0.9.1.zip", repos = NULL, lib = "P:/R/libraries/AAA TEST LIBRARIES")
 
 ## load the package from test folder
 library(package = "mbie", lib.loc = "P:/R/libraries/AAA TEST LIBRARIES")
@@ -42,5 +42,5 @@ library(package = "mbie", lib.loc = "P:/R/libraries/AAA TEST LIBRARIES")
 # build(pkg ="pkg", path= "P:/OTSP/data-infrastructure/archive", binary=FALSE)
 # 
 # ## install the package to production libraries.
-# install.packages("P:/OTSP/data-infrastructure/archive/mbie_0.9.0.zip",repos = NULL,lib = "P:/R/libraries/3.1.2")
+# install.packages("P:/OTSP/data-infrastructure/archive/mbie_0.9.1.zip",repos = NULL,lib = "P:/R/libraries/3.1.2")
 ############################################################################
