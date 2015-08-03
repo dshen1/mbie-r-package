@@ -72,7 +72,8 @@ data(IVStrips)
 
 tmp <- IVStrips \%>\%
          group_by(YEJun, POVTop3, COPRTop5) \%>\%
-         summarise(Spend = sum(FinalWeight * SmoothTotalSpend * Adjusted_Factor))
+         summarise(Spend = sum(FinalWeight * SmoothTotalSpend * Adjusted_Factor)) \%>\%
+         data.frame
 
 plot3 <- ggplot(tmp, aes(x = YEJun, y = Spend / 10 ^ 6, colour = COPRTop5)) +
    facet_wrap( ~ POVTop3) +
